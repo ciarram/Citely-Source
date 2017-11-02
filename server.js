@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -26,7 +26,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
