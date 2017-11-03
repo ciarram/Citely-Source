@@ -2,8 +2,12 @@
   "name": "final-project",
   "version": "1.0.0",
   "description": "An application to assist in the organization of your essay by providing an outline and a holder for your quotes",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +23,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
+    "concurrently": "^3.5.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongoose": "^4.12.6",
@@ -27,5 +32,9 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.4.0",
     "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "concurrently": "^3.5.0"
   }
 }
