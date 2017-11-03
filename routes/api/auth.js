@@ -2,7 +2,7 @@ const router = require("express").Router();
 const authController = require("../../controllers/authController");
 
 // Matches with "/api/auth"
-router.route("/login")
+router.route("/")
   .post(authController.doLogin);
 
   router.route("/register")
