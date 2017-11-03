@@ -11,18 +11,18 @@ class Home extends Component {
         <Nav />
         <Container>
             <Row>
-                <Col size="md-4">
-
+                <Col size="md-4" className="book-list">
+                Books
                 </Col>
             </Row>
             <Row>
-                <Col size="md-8">
-                
+                <Col size="md-7" className="ouline-list">
+                Essay Outline
                 </Col>
             </Row>
             <Row>
-                <Col size="md-4">
-
+                <Col size="md-4" className="article-list">
+                Articles
                 </Col>
             </Row>
         </Container>
@@ -30,3 +30,5 @@ class Home extends Component {
         );
     };
 };
+
+export default Home;
