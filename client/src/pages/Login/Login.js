@@ -8,21 +8,24 @@ class LoginForm extends Component {
         return(
             <div>
                 <Container>
+                <form>
                     <Row>
-                        <Input>
-                            Username
-                        </Input>
+                        <Input
+                        name="username"
+                        placeholder="username (required)"
+                        />
                     </Row>
                     <Row>
-                        <Input>
-                            Password
-                        </Input>
+                        <Input
+                        name="password"
+                        type="password"
+                        placeholder="password (required)"
+                        />
                     </Row>
                     <Row>
-                        <Input>
-                            <LoginBtn />
-                        </Input>
+                     <LoginBtn> Login </LoginBtn>
                     </Row>
+                    </form>
                 </Container>
             </div>
         );
