@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Row, Container } from "../../components/Grid";
+import { Row, Container } from "../components/Grid";
 import {Input, LoginBtn} from "../../components/Login";
 
 class LoginForm extends Component {
