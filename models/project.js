@@ -23,7 +23,7 @@ const projectSchema = new Schema({
         accessDate: {type: Date, required: true},
         quote: {type: String, required: true},
   },
-  outline: {type: String, required: true}
+  outline: {type: String, required: false}
 });
  
 
