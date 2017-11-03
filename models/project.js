@@ -22,7 +22,8 @@ const projectSchema = new Schema({
         url: {type: String, required: true},
         accessDate: {type: Date, required: true},
         quote: {type: String, required: true},
-  }
+  },
+  outline: {type: String, required: true}
 });
  
 
