@@ -22,7 +22,7 @@ export default {
     return axios.post("/api/auth/login", userData);
   },
   logout: function() {
-    return axios.get("/api/auth/logout");
+    return axios.get("/auth/logout");
   },
   register: function(userData) {
     return axios.post("/api/auth/register", userData);

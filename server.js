@@ -1,12 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-
-// const routes = require("./routes");
 const app = express();
+const routes = require("./routes/api");
+
 const PORT = process.env.PORT || 3001;
 
 // Configure body parser for AJAX requests
@@ -25,8 +24,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Add routes, both API and view
-// app.use(routes);
+//Add routes, both API and view
+app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;

@@ -3,8 +3,8 @@ const projectController = require("../../controllers/projectController");
 
 // Matches with "/api/books"
 router.route("/home")
-  .get(booksController.findAll)
-  .post(booksController.create);
+  .get(projectController.findAll)
+  .post(projectController.create);
 
 // Matches with "/api/books/:id"
 // router
