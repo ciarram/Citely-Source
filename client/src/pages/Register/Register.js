@@ -27,6 +27,7 @@ class Register extends Component {
       })
         .then(res => {
           if(res.data.user){
+            console.log("INSIDE handleFormSubmit")  //TEST            
             this.props.history.push('/projects');
           }
           else {
