@@ -25,6 +25,7 @@ export default {
     return axios.get("/auth/logout");
   },
   register: function(userData) {
-    return axios.post("/api/auth/register", userData);
+    console.log("inside register") 
+    return axios.post("/api/auth/register", userData);  //TEST got rid of /api at beginning of route
   },
 };
