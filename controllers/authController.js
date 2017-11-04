@@ -8,17 +8,18 @@ module.exports = {
   console.log(req.body.password)
     User.register(new User({ username: req.body.username, password: req.body.password }), req.body.password, function (err, user) {
       if (err) {
-        console.log(err.errors)
-        console.log("inside doRegister2")  //TEST        
+        // console.log(err.errors)
+        // console.log("inside doRegister2")          
         return res.status(500).json({ error: err });
       }
       passport.authenticate('local')(req, res, function () {
-        console.log("inside doRegister3")  //TEST        
+        // console.log("inside doRegister3")          
         return res.status(200).json({ result: 'success', user: user });
       });
     });
   },
   doLogin: function (req, res) {
+    console.log("inside doLogin")
     passport.authenticate('local')(req, res, function () {
       return res.status(200).json({ result: 'success', user: req.user, session: req.session });
     });
