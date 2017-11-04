@@ -5,7 +5,8 @@ const User = require("../models/user");
 module.exports = {
   doRegister: function (req, res) {
     console.log("inside doregister1")
-    User.register(new User({ username: req.body.username }), req.body.password, function (err, user) {
+  console.log(req.body.password)
+    User.register(new User({ username: req.body.username, password: req.body.password }), req.body.password, function (err, user) {
       if (err) {
         console.log(err.errors)
         console.log("inside doRegister2")  //TEST        
