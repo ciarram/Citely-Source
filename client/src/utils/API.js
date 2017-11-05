@@ -1,10 +1,23 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
 
+//create new project 
   createProject: function(newProject) {
-    return axios.post("/api/newproject", newProject);
+    console.log("reaching createProject front end")
+    return axios.post("/api/projects/newproject", newProject);
+  },
+  createbQuote: function(newbookquote) {
+    console.log("reaching createbQuote front end")
+    return axios.post("/api/projects/newbquote", newbookquote);
+  },
+  createArtQuote: function(newartquote) {
+    console.log("reaching createArtQuote front end")
+    return axios.post("/api/projects/newbquote", newartquote);
+  },
+  createOutline: function(newoutline) {
+    console.log("reaching createOutline front end")
+    return axios.post("/api/projects/newoutline", newoutline);
   },
   getProjects: function() {
     return axios.get("/api/projects");

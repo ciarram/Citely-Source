@@ -33,6 +33,39 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  createbquote: function (req, res) {
+    console.log("inside createbquote function")
+    if (req.user) {
+      db.Bookquote
+        .create(req.body)
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err));
+
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
+  createartquote: function (req, res) {
+    console.log("inside createartquote function")
+    if (req.user) {
+      db.Articlequote
+        .create(req.body)
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err));
+
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
+  createoutline: function (req, res) {
+    console.log("inside outline function")
+    if (req.user) {
+      db.Outline
+        .create(req.body)
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err));
+
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
   update: function (req, res) {
     if (req.user) {
       db.Project

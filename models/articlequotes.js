@@ -8,15 +8,15 @@ const articleSchema = new Schema({
     },
         artquote: { 
             articleName: {type: String, required: true},
-            author: {type: String, required: false},
-            siteName: {type: String, required: true},
-            version: {type: String, required: false},
-            number: {type: Number, required: false},
-            publisher: {type: String, required: false},
-            pubDate: {type: Date, required: false},
-            url: {type: String, required: true},
-            accessDate: {type: Date, required: true},
-            quote: {type: String, required: true},
+            // author: {type: String, required: false},
+            // siteName: {type: String, required: true},
+            // version: {type: String, required: false},
+            // number: {type: Number, required: false},
+            // publisher: {type: String, required: false},
+            // pubDate: {type: Date, required: false},
+            // url: {type: String, required: true},
+            // accessDate: {type: Date, required: true},
+            quote: {type: String, required: true}
   }
 });
  

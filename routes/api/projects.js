@@ -1,10 +1,18 @@
 const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
 
-// Matches with "/api/books"
+// Matches with "/api/projects", must include in URL
 router.route("/newproject")
 .post(projectController.create);
 
+router.route("/newbquote")
+.post(projectController.createbquote);
+
+router.route("/newartquote")
+.post(projectController.createartquote);
+
+router.route("/newoutline")
+.post(projectController.createoutline);
 // router.route("/home")
 //   .get(projectController.findAll)
 //   .post(projectController.create);
