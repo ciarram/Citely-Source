@@ -8,10 +8,10 @@ const bookSchema = new Schema({
     },
         bquote: { 
             title: {type: String, required: true},
-            author: {type: String, required: true},
-            publisher: {type: String, required: true},
-            pubDate: {type: Date, required: true},
-            pageNum: {type: Number, required: true},
+            // author: {type: String, required: true},
+            // publisher: {type: String, required: true},
+            // pubDate: {type: Date, required: true},
+            // pageNum: {type: Number, required: true},
             quote: {type: String, required: true}
     }
 });
