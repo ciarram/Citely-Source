@@ -20,6 +20,7 @@ class Home extends Component {
                     <Section>
                     Books
                         <Article>
+                            Each Book Goes Here 
                         </Article>
                     </Section>
                 </Col>
@@ -29,6 +30,7 @@ class Home extends Component {
                     <Section>
                     Essay Outline
                         <Article>
+                            Each Project Goes Here
                         </Article>
                     </Section>
                 </Col>
@@ -37,8 +39,9 @@ class Home extends Component {
                 <Col size="md-4" className="article-list">
                     <Section>
                     Articles
-                        <Articles>
-                        </Articles>
+                        <Article>
+                            Each Article Goes Here
+                        </Article>
                     </Section>
                 </Col>
             </Row>
