@@ -1,7 +1,8 @@
 import React from "react";
 import {Input} from "./Input.js";
+import {TextBox} from "./TextArea.js";
 
-const ArticleModal = () =>
+const ArticleModal = () =>(
 <div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -21,7 +22,7 @@ const ArticleModal = () =>
         <Input />
         <Input />
         <Input />
-        <Input />
+        <Textbox />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn">Save changes</button>

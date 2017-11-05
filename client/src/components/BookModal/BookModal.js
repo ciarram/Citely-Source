@@ -1,8 +1,8 @@
 import React from "react";
 import {Input} from "./Input.js";
+import {TextBox} from "./TextArea.js";
 
-
-const BookModal = () => 
+const BookModal = () =>(
 <div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
