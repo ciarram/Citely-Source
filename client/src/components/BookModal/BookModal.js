@@ -18,7 +18,7 @@ const BookModal = () =>(
         <Input />
         <Input />
         <Input />
-        <Input />
+        <TextBox />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn">Save changes</button>
