@@ -5,6 +5,6 @@ const projectsRoutes = require("./projects");
 // Auth routes
 router.use("/api/auth", authRoutes);
 // Book routes
-router.use("/projects", projectsRoutes);
+router.use("/api/projects", projectsRoutes);
 
 module.exports = router;

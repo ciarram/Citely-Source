@@ -2,6 +2,10 @@ import axios from "axios";
 
 export default {
   // Gets all books
+
+  createProject: function(newProject) {
+    return axios.post("/api/newproject", newProject);
+  },
   getProjects: function() {
     return axios.get("/api/projects");
   },
