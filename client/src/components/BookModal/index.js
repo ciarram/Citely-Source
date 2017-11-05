@@ -1,1 +1,1 @@
-export * from "./BookModal.js";
+export {default} from "./BookModal.js";

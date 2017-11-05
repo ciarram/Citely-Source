@@ -1,6 +1,8 @@
 import React from "react";
-import Input from "./Input.js";
+import {Input} from "./Input.js";
 
+
+const BookModal = () => 
 <div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -25,3 +27,6 @@ import Input from "./Input.js";
     </div>
   </div>
 </div>
+);
+
+export default BookModal;
