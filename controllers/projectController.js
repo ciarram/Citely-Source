@@ -23,6 +23,7 @@ module.exports = {
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
   create: function (req, res) {
+    console.log("inside create function")
     if (req.user) {
       db.Project
         .create(req.body)
