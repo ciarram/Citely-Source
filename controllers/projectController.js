@@ -2,6 +2,7 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
+  // find all projects associated with a user 
   findAll: function (req, res) {
     if (req.user) {
       console.log(req.user)
@@ -13,6 +14,7 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  //
   findById: function (req, res) {
     if (req.user) {
       db.Project
@@ -23,6 +25,7 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  //create new project 
   create: function (req, res) {
     console.log("inside create function")
     if (req.user) {
@@ -33,22 +36,25 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
-
+//create new book quote 
   createbquote: function (req, res) {
-    console.log("inside createbquote function")
+    console.log("inside createbquote function");
+    console.log(req.body.title, "req.body");
     if (req.user) {
       db.Bookquote
-        .findById(req.params.id)
-        .create({bquote : req.body.bquote, projectId : req.params.id})
-        // .create(req.body)
+        // .findById(req.params.id)
+        .create({title : req.body.title, author : req.body.author, publisher : req.body.publisher, pubDate : req.body.pubDate, pageNum : req.body.pageNum, quote : req.body.quote})
+        // projectId : req.params.id
+        // .create({projectId : req.body.projectId})
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
         .catch(err => res.status(422).json(err));
 
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  //create new article quote
   createartquote: function (req, res) {
-    console.log("inside createartquote function")
+    console.log("inside createartquote function");
     if (req.user) {
       db.Articlequote
         .create(req.body)
@@ -58,6 +64,7 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  //create new outline
   createoutline: function (req, res) {
     console.log("inside outline function")
     if (req.user) {
@@ -69,6 +76,7 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+
   update: function (req, res) {
     if (req.user) {
       db.Project

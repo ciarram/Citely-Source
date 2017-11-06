@@ -22,7 +22,7 @@ export default {
   getProjects: function() {
     return axios.get("/api/projects");
   },
-  // Gets the book with the given id
+  // Gets all the projects with the given user id
   getProject: function(id) {
     return axios.get("/api/projects/" + id);
   },
