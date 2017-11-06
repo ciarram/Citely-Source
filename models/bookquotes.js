@@ -6,15 +6,13 @@ const bookSchema = new Schema({
     //         type: Schema.Types.ObjectId,
     //         ref: "Project" 
     // },
-        bquote: { 
-            title: {type: String, required: true},
-            author: {type: String, required: true},
-            publisher: {type: String, required: true},
-            pubDate: {type: Date, required: true},
-            pageNum: {type: Number, required: true},
-            quote: {type: String, required: true}
-    },
-    projectId:{type: String, required: true}
+title: {type: String, required: true},
+author: {type: String, required: true},
+publisher: {type: String, required: true},
+pubDate: {type: Date, required: true},
+pageNum: {type: Number, required: true},
+quote: {type: String, required: true},
+// projectId:{type: String, required: true}
 });
  
 const Bookquote = mongoose.model("Bookquotes", bookSchema);
