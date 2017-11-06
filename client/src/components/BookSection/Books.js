@@ -1,6 +1,6 @@
 import React from "react";
 
-const BooksSection = props => (
+export const BooksSection = props => (
     <div class="card" style="width: 20rem;">
     <div class="card-header">
       {this.props.title}
@@ -12,5 +12,3 @@ const BooksSection = props => (
     </ul>
   </div>
 );
-
-export default BooksSection;

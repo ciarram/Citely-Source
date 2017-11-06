@@ -4,7 +4,7 @@ import React from "react";
 
 export const ArticleBtn = () => (
     <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-    Add a new Article
+    Add Article
     </button>
 );
 // const ArticleButton = ({ type, className, children, onClick }) => (

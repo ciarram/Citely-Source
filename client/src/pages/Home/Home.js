@@ -1,8 +1,9 @@
 // C.M - imported the Grid elements and react for the page
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import {BookInput, TextBox, BookModal} from "../../components/BookModal";
+import {BookInput, BookTextArea} from "../../components/BookForm";
 import {BookBtn} from "../../components/BookBtn";
+import {ArticleInput, ArticleTextArea} from "../../components/ArticleForm";
 import {ArticleBtn} from "../../components/ArticleBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 // import Nav from "../../components/Nav";
@@ -65,18 +66,38 @@ class Home extends Component {
                 <Col size="md-4" className="book-list">
                     <Section>
                     Books
+                    <br></br>
+                    <BookInput 
+                    name="title"
+                    placeholder="Book Title (required)"
+                    />
+                    <BookInput 
+                    name="author"
+                    placeholder="Author Name (required)"
+                    />
+                    <BookInput 
+                    name="publisher"
+                    placeholder="Publisher (required)"
+                    />
+                    <BookInput 
+                    name="pubDate"
+                    placeholder="Publication Date (required)"
+                    />
+                    <BookInput 
+                    name="pageNum"
+                    placeholder="Page Number (required)"
+                    />
+                    <BookTextArea 
+                    name="quote"
+                    placeholder="Enter the quote here (required)"
+                    />
+                    <BookBtn>
+                    </BookBtn>
                         <Article>
                             Each Book Goes Here 
-                            <br></br>
-                            <BookBtn    
-                            >
-                                Add New Book
-                            </BookBtn>
                         </Article>
                     </Section>
                 </Col>
-            </Row>
-            <Row>
                 <Col size="md-7" className="ouline-list">
                     <Section>
                     Essay Outline
@@ -90,11 +111,51 @@ class Home extends Component {
                 <Col size="md-4" className="article-list">
                     <Section>
                     Articles
+                    <br></br>
+                    <ArticleInput 
+                        name="articleName"
+                        placeholder="Article Title (required)"
+                    /> 
+                    <ArticleInput 
+                        name="author"
+                        placeholder="Author Name (optional)"
+                    />
+                    <ArticleInput 
+                        name="siteName"
+                        placeholder="Website Name (required)"
+                    />
+                    <ArticleInput 
+                        name="version"
+                        placeholder="Version (optional)"
+                    />
+                    <ArticleInput 
+                        name="number"
+                        placeholder="Number (optional)"
+                    />
+                    <ArticleInput 
+                        name="publisher"
+                        placeholder="Publisher (optional)"
+                    />
+                    <ArticleInput 
+                        name="pubDate"
+                        placeholder="Published Date (optional)"
+                    />
+                    <ArticleInput 
+                        name="url"
+                        placeholder="URL (required)"
+                    />
+                    <ArticleInput 
+                        name="accessDate"
+                        placeholder="Date You Accessed Site (required)"
+                    />
+                    <ArticleTextArea 
+                        name="quote"
+                        placeholder="Enter quote here (required)"
+                    />   
+                    <ArticleBtn>
+                    </ArticleBtn>
                         <Article>
                             Each Article Goes Here
-                            <br></br>
-                            <ArticleBtn>
-                            </ArticleBtn>
                         </Article>
                     </Section>
                 </Col>
