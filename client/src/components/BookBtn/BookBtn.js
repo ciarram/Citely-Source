@@ -4,7 +4,7 @@ import React from "react";
 
 export const BookBtn = () => (
     <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-    Add a New Book
+    Add Book
     </button>
 )
 

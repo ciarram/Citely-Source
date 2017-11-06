@@ -1,1 +1,1 @@
-export {default} from "./BookSection";
+export * from "./Books.js";
