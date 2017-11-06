@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
+import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
 import {Input, LoginBtn} from "../../components/Login";
 // import API from "../../utils/API";
 
@@ -21,6 +22,11 @@ class ProjectFolder extends Component {
                 <Col size="md-12">
               {/* <form> */}
                   <h2>New Project</h2>
+
+                  <ProjectInput 
+                    name="projectName"
+                    placeholder="Enter the name of your project here (required)"
+                  />
                 {/* <Input
                   value={this.state.title}
                   onChange={this.handleInputChange}

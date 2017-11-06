@@ -105,9 +105,8 @@ class Home extends Component {
                 <Col size="md-6" className="ouline-list">
                     <Section>
                         Essay Outline
-                        <ProjectTextArea />
                         <Article>
-                            Each Project Goes Here
+                            <ProjectTextArea />
                         </Article>
                     </Section>
                 </Col>
