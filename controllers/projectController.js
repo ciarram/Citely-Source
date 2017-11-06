@@ -19,6 +19,7 @@ module.exports = {
     if (req.user) {
       db.Project
         .findById(req.params.id)
+        // .create({title : req.body.title, author : req.body.author, publisher : req.body.publisher, pubDate : req.body.pubDate, pageNum : req.body.pageNum, quote : req.body.quote})
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
         .catch(err => res.status(422).json(err));
 
