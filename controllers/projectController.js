@@ -38,7 +38,9 @@ module.exports = {
     console.log("inside createbquote function")
     if (req.user) {
       db.Bookquote
-        .create(req.body)
+        .findById(req.params.id)
+        .create({bquote : req.body.bquote, projectId : req.params.id})
+        // .create(req.body)
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
         .catch(err => res.status(422).json(err));
 

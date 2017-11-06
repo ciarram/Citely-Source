@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //jm
 const articleSchema = new Schema({
-        _projectId: {
-            type: Schema.Types.ObjectId,
-            ref: "Project" 
-    },
+    //     _projectId: {
+    //         type: Schema.Types.ObjectId,
+    //         ref: "Project" 
+    // },
         artquote: { 
             articleName: {type: String, required: true},
             // author: {type: String, required: false},
@@ -17,7 +17,8 @@ const articleSchema = new Schema({
             // url: {type: String, required: true},
             // accessDate: {type: Date, required: true},
             quote: {type: String, required: true}
-  }
+  },
+        projectId:{type: String, required: true}
 });
  
 const Articlequote = mongoose.model("Articlequotes", articleSchema);
