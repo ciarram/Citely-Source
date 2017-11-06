@@ -2,10 +2,10 @@
 
 import React from "react";
 
-const BookBtn = () => (
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+export const BookBtn = () => (
+    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
     Add a New Book
     </button>
 )
 
-export default BookBtn;
+// export default BookBtn;

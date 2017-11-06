@@ -1,6 +1,4 @@
 import React from "react";
-import {Input} from "./Input.js";
-import {TextBox} from "./TextArea.js";
 
 const BookModal = () =>(
 <div class="modal" tabindex="-1" role="dialog">
@@ -13,12 +11,6 @@ const BookModal = () =>(
         </button>
       </div>
       <div class="modal-body">
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <Input />
-        <TextBox />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn">Save changes</button>
