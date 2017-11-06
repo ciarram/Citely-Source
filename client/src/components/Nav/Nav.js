@@ -3,7 +3,7 @@ import React from "react";
 export const Nav = (props) => 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar w/ text</a>
+  <a class="navbar-brand" href="/home">Project Name</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,6 +14,12 @@ export const Nav = (props) =>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/projects">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
       </li>
     </ul>
     <span class="navbar-text"></span>

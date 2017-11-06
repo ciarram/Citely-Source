@@ -3,8 +3,10 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import {BookInput, BookTextArea} from "../../components/BookForm";
 import {BookBtn} from "../../components/BookBtn";
+// import {BookSection} from "../../components/BookSection";
 import {ArticleInput, ArticleTextArea} from "../../components/ArticleForm";
 import {ArticleBtn} from "../../components/ArticleBtn";
+import {ProjectTextArea} from "../../components/ProjectOutline";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
 
@@ -94,13 +96,16 @@ class Home extends Component {
                     <BookBtn>
                     </BookBtn>
                         <Article>
-                            Each Book Goes Here 
+                            {/* <BookSection> */}
+                            Each Book Goes Here
+                            {/* </BookSection>  */}
                         </Article>
                     </Section>
                 </Col>
-                <Col size="md-7" className="ouline-list">
+                <Col size="md-6" className="ouline-list">
                     <Section>
-                    Essay Outline
+                        Essay Outline
+                        <ProjectTextArea />
                         <Article>
                             Each Project Goes Here
                         </Article>

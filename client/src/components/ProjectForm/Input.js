@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = props => (
+const ProjectInput = props => (
 <div className="form-group">
   <input className="form-control" {...props} />
 </div>

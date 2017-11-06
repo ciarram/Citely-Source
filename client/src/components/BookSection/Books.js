@@ -1,9 +1,9 @@
 import React from "react";
 
-export const BooksSection = props => (
+export const BookSection = () => (
     <div class="card" style="width: 20rem;">
     <div class="card-header">
-      {this.props.title}
+      Saved Book Quotes
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Test 1</li>
