@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-// import Nav from "../../components/Nav";
+import {Nav} from "../../components/Nav";
 import {Input, LoginBtn} from "../../components/Login";
 // import API from "../../utils/API";
 
@@ -15,7 +15,7 @@ class ProjectFolder extends Component {
     render (){
         return(
             <div>
-            {/* <Nav/> */}
+            <Nav/>
             <Container fluid>
                 <Row>
                 <Col size="md-12">

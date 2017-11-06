@@ -1,6 +1,6 @@
 import React from "react";
 
-const Nav = (props) => 
+export const Nav = (props) => 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar w/ text</a>
@@ -10,10 +10,10 @@ const Nav = (props) =>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Projects</a>
+        <a class="nav-link" href="/projects">Projects</a>
       </li>
     </ul>
     <span class="navbar-text"></span>

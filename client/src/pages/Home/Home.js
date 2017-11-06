@@ -6,7 +6,7 @@ import {BookBtn} from "../../components/BookBtn";
 import {ArticleInput, ArticleTextArea} from "../../components/ArticleForm";
 import {ArticleBtn} from "../../components/ArticleBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
-// import Nav from "../../components/Nav";
+import {Nav} from "../../components/Nav";
 
 // C.M. - Setup the general outline of the Home page for the Book, Article and Project sections
 class Home extends Component {
@@ -60,7 +60,7 @@ class Home extends Component {
     render() {
         return(
         <div>
-        {/* <Nav /> */}
+        <Nav />
         <Container>
             <Row>
                 <Col size="md-4" className="book-list">
