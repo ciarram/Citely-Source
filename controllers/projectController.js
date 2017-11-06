@@ -4,11 +4,12 @@ const db = require("../models");
 module.exports = {
   findAll: function (req, res) {
     if (req.user) {
+      console.log(req.user)
       db.Project
-        .find(req.query)
+        .find({userId: req.user._id})
         .sort({ date: -1 })
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
-        .catch(err => res.status(422).json(err));
+        .catch(err => res.status(422).json(err, console.log(err)));
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
@@ -26,13 +27,13 @@ module.exports = {
     console.log("inside create function")
     if (req.user) {
       db.Project
-        .create(req.body)
+        .create({projectName : req.body.projectName, userId: req.user._id})
         .then(dbModel => res.json({results: dbModel, sess: req.session}))
         .catch(err => res.status(422).json(err));
-
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+
   createbquote: function (req, res) {
     console.log("inside createbquote function")
     if (req.user) {
