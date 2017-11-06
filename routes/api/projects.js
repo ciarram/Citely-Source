@@ -13,6 +13,15 @@ router.route("/newartquote")
 
 router.route("/newoutline")
 .post(projectController.createoutline);
+
+router.route("/:id")
+.get(projectController.findById)
+
+
+router.route("/allprojects/:id")
+.get(projectController.findAll)
+
+
 // router.route("/home")
 //   .get(projectController.findAll)
 //   .post(projectController.create);

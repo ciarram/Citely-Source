@@ -6,7 +6,10 @@ const passLocalMon = require("passport-local-mongoose");
 const userSchema = new Schema({
   username: { type: String, required: true },
   password: { type: String, required: true },
-  
+  projects: [
+    {type: Schema.Types.ObjectId,
+    ref: "Project"}
+  ]
 });
 
 userSchema.plugin(passLocalMon);
