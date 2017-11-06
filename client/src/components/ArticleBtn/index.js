@@ -1,1 +1,1 @@
-export {default} from "./ArticleBtn.js";
+export * from "./ArticleBtn.js";

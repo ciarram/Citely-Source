@@ -1,1 +1,1 @@
-export {default} from "./BookBtn.js";
+export * from "./BookBtn.js";

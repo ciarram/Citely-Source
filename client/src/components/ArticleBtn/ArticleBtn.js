@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const ArticleBtn = () => (
+export const ArticleBtn = () => (
     <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
     Add a new Article
     </button>
@@ -18,4 +18,4 @@ const ArticleBtn = () => (
 //     // </button>
 //   );
 
-export default ArticleBtn;
+// export default ArticleBtn;

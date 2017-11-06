@@ -1,14 +1,17 @@
 // C.M - imported the Grid elements and react for the page
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
+import {BookInput, TextBox, BookModal} from "../../components/BookModal";
+import {BookBtn} from "../../components/BookBtn";
+import {ArticleBtn} from "../../components/ArticleBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 // import Nav from "../../components/Nav";
 
 // C.M. - Setup the general outline of the Home page for the Book, Article and Project sections
 class Home extends Component {
-    // state = {
+    state = {
 
-    // }
+    }
     // C.M. - should return the Books and Article sections on the left side of the screen and current project on the right side of the screen
     render() {
         return(
@@ -21,6 +24,11 @@ class Home extends Component {
                     Books
                         <Article>
                             Each Book Goes Here 
+                            <br></br>
+                            <BookBtn    
+                            >
+                                Add New Book
+                            </BookBtn>
                         </Article>
                     </Section>
                 </Col>
@@ -41,6 +49,9 @@ class Home extends Component {
                     Articles
                         <Article>
                             Each Article Goes Here
+                            <br></br>
+                            <ArticleBtn>
+                            </ArticleBtn>
                         </Article>
                     </Section>
                 </Col>

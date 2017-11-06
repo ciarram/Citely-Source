@@ -1,9 +1,9 @@
 import React from "react";
 
-const Input = props => (
+const BookInput = props => (
 <div className="form-group">
   <input className="form-control" {...props} />
 </div>
 );
 
-export default Input;
+export default BookInput;
