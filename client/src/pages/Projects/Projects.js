@@ -25,12 +25,18 @@ class ProjectFolder extends Component {
               console.log("There's an error!", res.data);
               this.props.history.push("/login");
             } else {
-              console.log("user:", res.data.sess, res.data);
-              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results[i].projectName})
+              console.log("user:", res.data);
+              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results[0].projectName})
             }
           })
           .catch(err => console.log(err));
       };
+
+      // projectList = () => {
+      //   if(this.state.projectResult){
+
+      //   }
+      // }
     
       // Deletes a book from the database with a given id, then reloads books from the db
       deleteProject = id => {
@@ -82,7 +88,7 @@ class ProjectFolder extends Component {
           <Row>
             <Col size="md-12">
               <h2>All Projects</h2>
-              <p>{this.state.projectResult}</p>
+              <a href="/home">{this.state.projectResult}</a>
             </Col>
           </Row>
         </Container>
