@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
+import { Col, Row, Container, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
 // import {Input, LoginBtn} from "../../components/Login";
@@ -26,7 +26,7 @@ class ProjectFolder extends Component {
               this.props.history.push("/login");
             } else {
               console.log("user:", res.data);
-              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results[0].projectName})
+              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results.projectName})
             }
           })
           .catch(err => console.log(err));
@@ -48,7 +48,7 @@ class ProjectFolder extends Component {
     handleInputChange = event => {
       const { name, value } = event.target;
       this.setState({
-        [name]: value
+        name: value
       });
     };
   
@@ -88,7 +88,22 @@ class ProjectFolder extends Component {
           <Row>
             <Col size="md-12">
               <h2>All Projects</h2>
-              <a href="/home">{this.state.projectResult}</a>
+              {this.state.projectResult.length ? (
+              <Section>
+                {this.state.projectResult.map(projectList => (
+                  <ListItem key={projectList._id}>
+                    <Link to={"/home/" + projectList._id}>
+                      <strong>
+                        {projectList.projectName}
+                      </strong>
+                    </Link>
+                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                  </ListItem>
+                ))}
+              </Section>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
             </Col>
           </Row>
         </Container>

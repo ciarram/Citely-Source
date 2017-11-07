@@ -14,6 +14,7 @@ import {Nav} from "../../components/Nav";
 // C.M. - Setup the general outline of the Home page for the Books and Project sections
 class Home extends Component {
     state = {
+        currentUser: "",
         title: "",
         author: "",
         publisher: "",
