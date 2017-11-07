@@ -43,6 +43,25 @@ class LoginForm extends Component {
         }
       };
 
+      handleFormRegister = event => {
+        event.preventDefault();
+        if (this.state.username && this.state.password) {
+          API.register({
+            username: this.state.username,
+            password: this.state.password
+          })
+            .then(res => {
+              if (res.data.user) {
+                this.props.history.push('/projects');
+              }
+              else {
+                console.log("no user");
+              }
+            })
+            .catch(err => console.log(err));
+        }
+      };
+
     render(){
         return(
             <div>
@@ -67,7 +86,7 @@ class LoginForm extends Component {
                      <LoginBtn disabled={!(this.state.username && this.state.password)}
                 onClick={this.handleFormSubmit}> Login </LoginBtn>
                       <br></br><br></br>
-                      <SignupBtn>
+                      <SignupBtn onClick={this.handleFormRegister}>
                         Sign Up
                       </SignupBtn>
                     </Row>
