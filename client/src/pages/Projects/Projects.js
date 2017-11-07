@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Col, Row, Container, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
+import {List, ListItem} from "../../components/List"
 // import {Input, LoginBtn} from "../../components/Login";
 import API from "../../utils/API";
 
@@ -48,7 +49,7 @@ class ProjectFolder extends Component {
     handleInputChange = event => {
       const { name, value } = event.target;
       this.setState({
-        name: value
+        [name]: value
       });
     };
   
@@ -88,7 +89,7 @@ class ProjectFolder extends Component {
           <Row>
             <Col size="md-12">
               <h2>All Projects</h2>
-              {this.state.projectResult.length ? (
+              {this.state.projectResult ? (
               <Section>
                 {this.state.projectResult.map(projectList => (
                   <ListItem key={projectList._id}>
