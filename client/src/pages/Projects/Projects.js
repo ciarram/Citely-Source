@@ -3,15 +3,59 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
-import {Input, LoginBtn} from "../../components/Login";
-// import API from "../../utils/API";
+// import {Input, LoginBtn} from "../../components/Login";
+import API from "../../utils/API";
 
 class ProjectFolder extends Component {
   state = {
     projectName: "",
-    password: "",
     currentUser: ""
   };
+
+      // componentDidMount() {
+      //   this.loadProjects();
+      // }
+    
+    
+      loadProjects = () => {
+        API.getProjects()
+          .then(res => {
+            if(res.data.statusCode === 401){
+              this.props.history.push("/login");
+            } else {
+              console.log("user:", res.data.sess);
+              this.setState({currentUser: res.data.sess.passport.user, projectName: res.data.results})
+            }
+          })
+          .catch(err => console.log(err));
+      };
+    
+      // Deletes a book from the database with a given id, then reloads books from the db
+      deleteProject = id => {
+        API.deleteProject(id)
+          .then(res => this.loadProjects())
+          .catch(err => console.log(err));
+      };
+    
+    handleInputChange = event => {
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value
+      });
+    };
+  
+  //   // When the form is submitted, use the API.saveBook method to save the book data
+  //   // Then reload books from the database
+    handleFormSubmit = event => {
+      event.preventDefault();
+      if (this.state.projectName) {
+        API.createProject({
+          projectName: this.state.projectName
+        })
+          .then(res => this.loadProjects())
+          .catch(err => console.log(err));
+      }
+    };
 
     render (){
         return(
@@ -20,38 +64,17 @@ class ProjectFolder extends Component {
             <Container fluid>
                 <Row>
                 <Col size="md-12">
-              {/* <form> */}
                   <h2>New Project</h2>
-
                   <ProjectInput 
+                    value={this.state.projectName}
+                    onChange={this.handleInputChange}
                     name="projectName"
                     placeholder="Enter the name of your project here (required)"
                   />
-                {/* <Input
-                  value={this.state.title}
-                  onChange={this.handleInputChange}
-                  name="title"
-                  placeholder="Title (required)"
-                />
-                <Input
-                  value={this.state.author}
-                  onChange={this.handleInputChange}
-                  name="author"
-                  placeholder="Author (required)"
-                />
-                <TextArea
-                  value={this.state.synopsis}
-                  onChange={this.handleInputChange}
-                  name="synopsis"
-                  placeholder="Synopsis (Optional)"
-                />
-                <FormBtn
-                  disabled={!(this.state.author && this.state.title)}
-                  onClick={this.handleFormSubmit}
-                >
-                  Submit Book
-              </FormBtn> */}
-              {/* </form> */}
+                  <SubmitBtn 
+                    disabled= {!(this.state.projectName)}
+                    onClick= {this.handleFormSubmit}
+                  />
             </Col>
           </Row>
           <Row>

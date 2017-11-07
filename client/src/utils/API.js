@@ -4,7 +4,7 @@ export default {
 //------------- PROJECTS PAGE
 //create new project and save to db
   createProject: function(newProject) {
-    console.log("reaching createProject front end")
+    console.log("reaching createProject front end", newProject)
     return axios.post("/api/projects/projects", newProject);
   },
 // Gets all the projects with the given user id --not sure about the id param in route file, must test on front end

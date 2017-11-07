@@ -5,7 +5,7 @@ const projectController = require("../../controllers/projectController");
 
 //**ROUTE THAT BRINGS US TO PROJECTS PAGE**
 //use when bringing up all projects that belong to a user -- have to figure out how to address this on front end because I am unclear how the ":id" works when it's not specifically referenced in the url. It might be best to hard code a user here.
-router.route("/projects/:id")
+router.route("/projects")
 .get(projectController.findAll)
 //use when creating new project -- on click of  new project button in form; need to redirect to home page at this point (done in React with push)
 .post(projectController.create)

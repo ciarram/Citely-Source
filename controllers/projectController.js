@@ -38,6 +38,7 @@ module.exports = {
   //create new project 
   create: function (req, res) {
     console.log("inside create function")
+    console.log(req.body.projectName);
     if (req.user) {
       db.Project
         .create({projectName : req.body.projectName, userId: req.user._id})
