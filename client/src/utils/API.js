@@ -1,37 +1,45 @@
 import axios from "axios";
 
 export default {
-
+//------------- PROJECTS PAGE
 //create new project and save to db
   createProject: function(newProject) {
     console.log("reaching createProject front end")
-    return axios.post("/api/projects/newproject", newProject);
+    return axios.post("/api/projects/projects", newProject);
   },
-//create new book quote and save to db
-  createbQuote: function(newbookquote) {
+// Gets all the projects with the given user id --not sure about the id param in route file, must test on front end
+  getProjects: function(id) {
+    return axios.get("/api/projects/projects" + id);
+    },
+
+  // Deletes the project according to its id
+  deleteProject: function(id) {
+    return axios.delete("/api/projects/projects" + id);
+  },
+//------------- HOME PAGE
+  getOneProject: function(id) {
+    return axios.get("/api/projects/home" + id);
+    },
+//create new book quote and save to db--not sure how this should be set up 
+  createbQuote: function(id, newbookquote) {
     console.log("reaching createbQuote front end")
-    return axios.post("/api/projects/home/:id", newbookquote);
-  },
-//create new article quote and save to db
-  createArtQuote: function(newartquote) {
-    console.log("reaching createArtQuote front end")
-    return axios.post("/api/projects/newbquote", newartquote);
+    return axios.post("/api/projects/home" + id, newbookquote);
   },
   //create new outline - not sure about this route but I think we need it to save info to db.
-  createOutline: function(newoutline) {
+  createOutline: function(id, newoutline) {
     console.log("reaching createOutline front end")
-    return axios.post("/api/projects/newoutline", newoutline);
+    return axios.post("/api/projects/home" + id, newoutline);
   },
-  // Gets all the projects with the given user id --not sure about the id param in route file, must test on front end
-  getProjects: function(id) {
-    return axios.get("/api/projects/" + id);
+  //delete book quote
+  deleteBQuote: function(id) {
+    return axios.delete("/api/projects/home" + id);
   },
-  // Deletes the book with the given id
-  deleteProject: function(id) {
-    return axios.delete("/api/projects/" + id);
+  //delete outline 
+  deleteOutline: function(id) {
+    return axios.delete("/api/projects/home" + id);
   },
-  // Saves a book to the database
-
+  //WHAT TO DO WITH UDPATE??
+//------------- ALL AUTH ROUTES BELOW 
   login: function(userData) {
     console.log("LOOKING FOR LOGIN INFO", userData)
     return axios.post("/api/auth/", userData);
@@ -45,12 +53,18 @@ export default {
     // console.log("inside register", userData.password) 
     return axios.post("/api/auth/register", userData);  //TEST got rid of /api at beginning of route
   },
-};
 
-  // getProjects: function() {
-  //   return axios.get("/api/projects/:id");
-  // },
+//------------- article info if needed 
+//create new article quote and save to db
+createArtQuote: function(newartquote) {
+  console.log("reaching createArtQuote front end")
+  return axios.post("/api/projects/newbquote", newartquote);
+  }
+};
 
   // saveProject: function(projectData) {
   //   return axios.post("/api/projects", projectData);
   // },
+
+
+
