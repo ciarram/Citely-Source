@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { Row, Container } from "../../components/Grid";
 import {Input, LoginBtn} from "../../components/Login";
+import {SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
 
 class LoginForm extends Component {
@@ -65,6 +66,10 @@ class LoginForm extends Component {
                     <Row>
                      <LoginBtn disabled={!(this.state.username && this.state.password)}
                 onClick={this.handleFormSubmit}> Login </LoginBtn>
+                      <br></br><br></br>
+                      <SignupBtn>
+                        Sign Up
+                      </SignupBtn>
                     </Row>
                     </form>
                 </Container>

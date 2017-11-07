@@ -7,6 +7,7 @@ import {BookBtn} from "../../components/BookBtn";
 // import {ArticleInput, ArticleTextArea} from "../../components/ArticleForm";
 // import {ArticleBtn} from "../../components/ArticleBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
+import {AddSectionBtn} from "../../components/AddSectionBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
 
@@ -111,6 +112,8 @@ class Home extends Component {
                         Essay Outline
                         <Article>
                             <ProjectTextArea />
+                            <br></br>
+                            <AddSectionBtn />
                         </Article>
                     </Section>
                 </Col>
