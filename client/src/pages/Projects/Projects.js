@@ -9,22 +9,24 @@ import API from "../../utils/API";
 class ProjectFolder extends Component {
   state = {
     projectName: "",
-    currentUser: ""
+    currentUser: "",
+    projectResult: ""
   };
 
-      // componentDidMount() {
-      //   this.loadProjects();
-      // }
+      componentDidMount() {
+        this.loadProjects();
+      }
     
     
       loadProjects = () => {
         API.getProjects()
           .then(res => {
             if(res.data.statusCode === 401){
+              console.log("There's an error!", res.data);
               this.props.history.push("/login");
             } else {
-              console.log("user:", res.data.sess);
-              this.setState({currentUser: res.data.sess.passport.user, projectName: res.data.results})
+              console.log("user:", res.data.sess, res.data);
+              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results[i].projectName})
             }
           })
           .catch(err => console.log(err));
@@ -79,23 +81,8 @@ class ProjectFolder extends Component {
           </Row>
           <Row>
             <Col size="md-12">
-              <h2>Projects Completed</h2>
-              {/* {this.state.books.length ? (
-                <List>
-                  {this.state.books.map(book => (
-                    <ListItem key={book._id}>
-                      <Link to={"/books/" + book._id}>
-                        <strong>
-                          {book.title} by {book.author}
-                        </strong>
-                      </Link>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                    </ListItem>
-                  ))}
-                </List>
-              ) : (
-                  <h3>No Results to Display</h3>
-                )} */}
+              <h2>All Projects</h2>
+              <p>{this.state.projectResult}</p>
             </Col>
           </Row>
         </Container>

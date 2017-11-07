@@ -8,8 +8,8 @@ export default {
     return axios.post("/api/projects/projects", newProject);
   },
 // Gets all the projects with the given user id --not sure about the id param in route file, must test on front end
-  getProjects: function(id) {
-    return axios.get("/api/projects/projects" + id);
+  getProjects: function() {
+    return axios.get("/api/projects/projects");
     },
 
   // Deletes the project according to its id
