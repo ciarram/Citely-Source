@@ -4,8 +4,8 @@ const User = require("../models/user");
 // Defining methods for the authController
 module.exports = {
   doRegister: function (req, res) {
-    console.log("inside doregister1")
-  console.log(req.body.password)
+    // console.log("inside doregister1")
+  // console.log(req.body.password)
     User.register(new User({ username: req.body.username, password: req.body.password }), req.body.password, function (err, user) {
       if (err) {
         // console.log(err.errors)
