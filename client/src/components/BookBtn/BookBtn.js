@@ -2,8 +2,8 @@
 
 import React from "react";
 
-export const BookBtn = () => (
-    <button type="button" className="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+export const BookBtn = (props) => (
+    <button {...props} className="btn">
     Add Book
     </button>
 )

@@ -10,6 +10,7 @@ import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
+import API from "../../utils/API";
 
 // C.M. - Setup the general outline of the Home page for the Books and Project sections
 class Home extends Component {
@@ -18,8 +19,8 @@ class Home extends Component {
         title: "",
         author: "",
         publisher: "",
-        publishdate: "",
-        pagenumber: "",
+        pubdate: "",
+        pagenum: "",
         quote: ""
     }
 
@@ -28,8 +29,8 @@ class Home extends Component {
     //   }
     
     
-    //   loadBookQuotes = () => {
-    //     API.getBooks()
+    //   createBookQuotes = () => {
+    //     API.createbQuote()
     //       .then(res =>
     //         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
     //       )
@@ -50,20 +51,23 @@ class Home extends Component {
         });
       };
     
-    //   // When the form is submitted, use the API.saveBook method to save the book data
-    //   // Then reload books from the database
-    //   handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if (this.state.title && this.state.author) {
-    //       API.saveBook({
-    //         title: this.state.title,
-    //         author: this.state.author,
-    //         synopsis: this.state.synopsis
-    //       })
-    //         .then(res => this.loadBooks())
-    //         .catch(err => console.log(err));
-    //     }
-    //   };
+      // When the form is submitted, use the API.saveBook method to save the book data
+      // Then reload books from the database
+      handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.author && this.state.publisher && this.state.pubdate && this.state.pagenum && this.state.quote) {
+          API.createbQuote({
+            title: this.state.title,
+            author: this.state.author,
+            publisher: this.state.publisher,
+            pubdate: this.state.pubdate,
+            pagenum: this.state.pagenum,
+            quote: this.state.quote
+          })
+            // .then(res => this.loadBooks())
+            .catch(err => console.log(err));
+        }
+      };
     // C.M. - should return the Books section on the left side of the screen and current project on the right side of the screen
     render() {
         return(
@@ -76,31 +80,45 @@ class Home extends Component {
                     Books
                     <br></br>
                     <BookInput 
+                    value={this.state.title}
+                    onChange={this.handleInputChange}
                     name="title"
                     placeholder="Book Title (required)"
                     />
                     <BookInput 
+                    value={this.state.author}
+                    onChange={this.handleInputChange}
                     name="author"
                     placeholder="Author Name (required)"
                     />
                     <BookInput 
+                    value={this.state.publisher}
+                    onChange={this.handleInputChange}
                     name="publisher"
                     placeholder="Publisher (required)"
                     />
                     <BookInput 
-                    name="pubDate"
+                    value={this.state.pubdate}
+                    onChange={this.handleInputChange}
+                    name="pubdate"
                     placeholder="Publication Date (required)"
                     />
                     <BookInput 
-                    name="pageNum"
+                    value={this.state.pagenum}
+                    onChange={this.handleInputChange}
+                    name="pagenum"
                     placeholder="Page Number (required)"
                     />
                     <BookTextArea 
+                    value={this.state.quote}
+                    onChange={this.handleInputChange}
                     name="quote"
                     placeholder="Enter the quote here (required)"
                     />
-                    <BookBtn>
-                    </BookBtn>
+                    <BookBtn disabled= {!(this.state.title)}
+                     onClick= {this.handleFormSubmit}/>
+
+                  
                         <Article>
                             {/* <BookSection> */}
                             Each Book Goes Here

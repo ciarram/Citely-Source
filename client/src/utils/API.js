@@ -21,9 +21,9 @@ export default {
     return axios.get("/api/projects/home" + id);
     },
 //create new book quote and save to db--not sure how this should be set up 
-  createbQuote: function(id, newbookquote) {
+  createbQuote: function(newbookquote) {
     console.log("reaching createbQuote front end")
-    return axios.post("/api/projects/home" + id, newbookquote);
+    return axios.post("/api/projects/home", newbookquote);
   },
   //create new outline - not sure about this route but I think we need it to save info to db.
   createOutline: function(id, newoutline) {
