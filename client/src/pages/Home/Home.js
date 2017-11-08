@@ -28,17 +28,23 @@ class Home extends Component {
     }
 
     // componentDidMount() {
-    //     this.loadBookQuotes();
+    //     this.loadBooks();
     //   }
     
     
-    //   createBookQuotes = () => {
-    //     API.createbQuote()
-    //       .then(res =>
-    //         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-    //       )
-    //       .catch(err => console.log(err));
-    //   };
+      loadBooks = () => {
+        API.getAllBookQuotes()
+          .then(res =>{
+            if(res.data.statusCode === 401){
+              console.log("There's an error!", res.data);
+              this.props.history.push("/login");
+            } else {
+              console.log("user:", res.data);
+              this.setState({currentUser: res.data.sess.passport.user, quote: res.data})
+            }
+          })    
+          .catch(err => console.log(err));
+      };
     
     //   // Deletes a book from the database with a given id, then reloads books from the db
     //   deleteBook = id => {
@@ -68,7 +74,7 @@ class Home extends Component {
             quote: this.state.quote,
             projectId: this.state.projectId
           })
-    //         .then(res => this.loadBooks())
+            .then(res => this.loadBooks())
             .catch(err => console.log(err));
         }
       };
