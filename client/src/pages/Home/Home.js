@@ -23,7 +23,8 @@ class Home extends Component {
         pageNum: "",
         quote: "",
         projectId: "",
-        outline: ""
+        outline: "",
+        projectIdOutline: ""
         // bquoteResult: ""
     }
 
@@ -152,10 +153,10 @@ class Home extends Component {
                     <Section>
                         Essay Outline
                         <Article>
-                            <BookInput 
-                            value={this.state.projectId}
+                            <ProjectTextArea 
+                            value={this.state.projectIdOutline}
                             onChange={this.handleInputChange}
-                            name="projectId"
+                            name="projectIdOutline"
                             placeholder="Enter the project name here (required)"/>
                             <ProjectTextArea 
                             value={this.state.outline}

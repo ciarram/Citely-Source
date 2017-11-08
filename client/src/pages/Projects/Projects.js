@@ -11,7 +11,7 @@ class ProjectFolder extends Component {
   state = {
     projectName: "",
     currentUser: "",
-    projectResult: ""
+    projectResult: []
   };
 
       componentDidMount() {
@@ -27,8 +27,17 @@ class ProjectFolder extends Component {
               this.props.history.push("/login");
             } else {
               console.log("user:", res.data);
-              this.setState({currentUser: res.data.sess.passport.user, projectResult: res.data.results.projectName})
-            }
+              var pNames = [];
+              res.data.results.forEach((result) => {
+                console.log("Pnames: " + result.projectName)
+                pNames.push(result.projectName);
+              })
+              console.log(res.data.results)
+               this.setState({currentUser: res.data.sess.passport.user, 
+                projectResult: res.data.results, projectName: "" })
+
+            
+              }
           })
           .catch(err => console.log(err));
       };
@@ -91,11 +100,11 @@ class ProjectFolder extends Component {
               <h2>All Projects</h2>
               {this.state.projectResult ? (
               <Section>
-                {this.state.projectResult.map(projectList => (
-                  <ListItem key={projectList._id}>
-                    <Link to={"/home/" + projectList._id}>
+                {this.state.projectResult.map(project => (
+                  <ListItem key={project._id}>
+                    <Link to={"api/projects/home/" + project._id}>
                       <strong>
-                        {projectList.projectName}
+                        {project.projectName}
                       </strong>
                     </Link>
                     {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
