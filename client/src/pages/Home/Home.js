@@ -4,8 +4,7 @@ import React, { Component } from "react";
 import {BookInput, BookTextArea} from "../../components/BookForm";
 import {BookBtn} from "../../components/BookBtn";
 // import {BookSection} from "../../components/BookSection";
-// import {ArticleInput, ArticleTextArea} from "../../components/ArticleForm";
-// import {ArticleBtn} from "../../components/ArticleBtn";
+import {DeleteBtn} from "../../components/DeleteBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
@@ -29,8 +28,8 @@ class Home extends Component {
         bquoteResult: []
     }
 
-    componentDidMount() {
-        this.loadBooks();
+    componentDidMount(id) {
+        this.loadBooks(id);
       }
     
     
@@ -63,11 +62,12 @@ class Home extends Component {
     };
     
     //   // Deletes a book from the database with a given id, then reloads books from the db
-    //   deleteBook = id => {
-    //     API.deleteBook(id)
-    //       .then(res => this.loadBooks())
-    //       .catch(err => console.log(err));
-    //   };
+      deleteBookQuote = (id) => {
+          console.log("beginning to delete");
+        API.deleteBQuote(id)
+           .then(res => this.loadBooks(id))
+          .catch(err => console.log(err));
+      };
     
       handleInputChange = event => {
         const { name, value } = event.target;
@@ -170,6 +170,9 @@ class Home extends Component {
                       <strong>
                         {quote.quote}
                       </strong>
+                      <DeleteBtn 
+                      onClick={() => this.deleteBookQuote(quote._id)}
+                      />
                     </ListItem>
                 ))}
               </Article>

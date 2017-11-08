@@ -38,7 +38,8 @@ export default {
   },
   //delete book quote
   deleteBQuote: function(id) {
-    return axios.delete("/api/projects/home" + id);
+    console.log("deleting the quote", id);
+    return axios.delete("/api/projects/home/" + id);
   },
   //delete outline 
   deleteOutline: function(id) {

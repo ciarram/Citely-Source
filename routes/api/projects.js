@@ -17,11 +17,11 @@ router.route("/home")
 .post(projectController.createbquote)
 // .post(projectController.createoutline)
 .put(projectController.updatebookq)
-.delete(projectController.deletebookq);
 
 
 router.route("/home/:id")
 .get(projectController.findAllInProject)
+.delete(projectController.deletebookq);
 //---------------------------------------
 //hoping all we need is above code, but keeping code below in case we need to separate any routes. 
 //---------------------------------------

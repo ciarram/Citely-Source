@@ -101,9 +101,10 @@ module.exports = {
   },
   //delete book quote
   deletebookq: function (req, res) {
+    console.log("In the delete section in controllers", req.params.id);
     if (req.user) {
       db.Bookquote
-        .findById({ _id:"5a01073dc633b807666f8da1"})
+        .findById({_id: req.params.id})
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
