@@ -10,6 +10,7 @@ import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
 import {Nav} from "../../components/Nav";
+import {List, ListItem} from "../../components/List"
 import API from "../../utils/API";
 
 // C.M. - Setup the general outline of the Home page for the Books and Project sections
@@ -28,9 +29,9 @@ class Home extends Component {
         bquoteResult: []
     }
 
-    // componentDidMount() {
-    //     this.loadBookQuotes();
-    //   }
+    componentDidMount() {
+        this.loadBooks();
+      }
     
     
     //   createBookQuotes = () => {
@@ -50,7 +51,12 @@ class Home extends Component {
                  this.props.history.push("/login");
             } else {
                 console.log("user:", res);
-                this.setState({currentUser: res.data.sess.passport.user, bquoteResult: res.data, title: "", author: "", publisher: "", pubDate: "", pageNum: "", quote: "", projectId: ""})
+                var qNames = [];
+                res.data.results.forEach((result) => {
+                    console.log("quotes", result.quote)
+                    qNames.push(result.quote);
+                });
+                this.setState({currentUser: res.data.sess.passport.user, bquoteResult: res.data.results, title: "", author: "", publisher: "", pubDate: "", pageNum: "", quote: "", projectId: ""})
             }
          })    
         .catch(err => console.log(err));
@@ -157,13 +163,20 @@ class Home extends Component {
                     <BookBtn disabled= {!(this.state.title)}
                      onClick= {() => this.handleFormSubmit(this.state.projectId)}/>
 
-                  
+                     {this.state.bquoteResult ? (
                         <Article>
-                            {/* <BookSection> */}
-                            Each Book Goes Here
-                            {/* </BookSection>  */}
-                        </Article>
-                    </Section>
+                {this.state.bquoteResult.map(quote => (
+                  <ListItem key={quote._id}>
+                      <strong>
+                        {quote.quote}
+                      </strong>
+                    </ListItem>
+                ))}
+              </Article>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Section>
                 </Col>
                 <Col size="md-6" className="ouline-list">
                     <Section>
