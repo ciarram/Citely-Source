@@ -26,6 +26,11 @@ export default {
     console.log("API", id);
     return axios.get("/api/projects/home/" + id);
   },
+  getOutline: function(id) {
+    console.log("reaching get outline on front-end");
+    console.log("API", id);
+    return axios.get("/api/projects/outline/" + id);
+  },
 //create new book quote and save to db--not sure how this should be set up 
   createbQuote: function(newbookquote) {
     console.log("reaching createbQuote front end")
@@ -34,7 +39,7 @@ export default {
   //create new outline - not sure about this route but I think we need it to save info to db.
   createOutline: function(newoutline) {
     console.log("reaching createOutline front end")
-    return axios.post("/api/projects/home", newoutline);
+    return axios.post("/api/projects/outline", newoutline);
   },
   //delete book quote
   deleteBQuote: function(id) {

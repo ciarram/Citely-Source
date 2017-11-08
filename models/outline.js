@@ -6,7 +6,7 @@ const outlineSchema = new Schema({
 //             type: Schema.Types.ObjectId,
 //             ref: "Project" 
 //     },
-        outline: {type: String, required: false},
+        outline: {type: String, required: true},
         projectIdOutline:{type: String, required: true}
 });
  

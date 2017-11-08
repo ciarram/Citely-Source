@@ -25,7 +25,8 @@ class Home extends Component {
         projectId: "",
         outline: "",
         projectIdOutline: "",
-        bquoteResult: []
+        bquoteResult: [],
+        outlineResult: []
     }
 
     componentDidMount(id) {
@@ -56,6 +57,27 @@ class Home extends Component {
                     qNames.push(result.quote);
                 });
                 this.setState({currentUser: res.data.sess.passport.user, bquoteResult: res.data.results, title: "", author: "", publisher: "", pubDate: "", pageNum: "", quote: "", projectId: ""})
+            }
+         })    
+        .catch(err => console.log(err));
+    };
+
+
+    loadOutline= (id) => {
+        console.log("Inside loadOutline", id);
+        API.getOutline(id)
+         .then(res =>{
+           if(res.data.statusCode === 401){
+                console.log("There's an error!", res.data);
+                 this.props.history.push("/login");
+            } else {
+                console.log("user:", res);
+                var outlineNames = [];
+                res.data.results.forEach((result) => {
+                    console.log("outline", result.outline)
+                    outlineNames.push(result.outline);
+                });
+                this.setState({currentUser: res.data.sess.passport.user, outlineResult: res.data.results, outline: "", projectIdOutline: ""})
             }
          })    
         .catch(err => console.log(err));
@@ -96,14 +118,14 @@ class Home extends Component {
         }
       };
           // Then reload books from the database
-    handleFormSubmitOutline = event => {
-        event.preventDefault();
+    handleFormSubmitOutline = (id) => {
+        console.log("inside outline handle form submit", id)
             if (this.state.outline) {
                 API.createOutline({
                outline: this.state.outline,
-               projectId: this.state.projectId
+               projectIdOutline: this.state.projectIdOutline
               })
-        //         .then(res => this.loadBooks())
+                .then(res => this.loadOutline(id))
                 .catch(err => console.log(err));
             }
           };
@@ -185,7 +207,7 @@ class Home extends Component {
                     <Section>
                         Essay Outline
                         <Article>
-                            <ProjectTextArea 
+                            <BookInput 
                             value={this.state.projectIdOutline}
                             onChange={this.handleInputChange}
                             name="projectIdOutline"
@@ -196,7 +218,20 @@ class Home extends Component {
                             name="outline"/>
                             <br></br>
                             <AddSectionBtn disabled= {!(this.state.outline)}
-                            onClick= {this.handleFormSubmitOutline}/>
+                            onClick= {() => this.handleFormSubmitOutline(this.state.projectIdOutline)}/>
+                            {this.state.outlineResult ? (
+                        <Article>
+                {this.state.outlineResult.map(outline => (
+                  <ListItem key={outline._id}>
+                      <strong>
+                        {outline.outline}
+                      </strong>
+                    </ListItem>
+                ))}
+              </Article>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
                         </Article>
                     </Section>
                 </Col>
