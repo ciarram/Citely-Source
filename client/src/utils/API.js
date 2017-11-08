@@ -30,9 +30,9 @@ export default {
     return axios.post("/api/projects/home", newbookquote);
   },
   //create new outline - not sure about this route but I think we need it to save info to db.
-  createOutline: function(id, newoutline) {
+  createOutline: function(newoutline) {
     console.log("reaching createOutline front end")
-    return axios.post("/api/projects/home" + id, newoutline);
+    return axios.post("/api/projects/home", newoutline);
   },
   //delete book quote
   deleteBQuote: function(id) {

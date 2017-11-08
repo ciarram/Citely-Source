@@ -1,7 +1,7 @@
 import React from "react";
 
-export const AddSectionBtn = () => (
-    <button type="button" className="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+export const AddSectionBtn = (props) => (
+    <button {...props} className="btn">
     Add a New Section
     </button>
 )
