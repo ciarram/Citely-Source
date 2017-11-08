@@ -20,6 +20,10 @@ export default {
   getOneProject: function(id) {
     return axios.get("/api/projects/home" + id);
     },
+//get all book quotes associated with project
+  getAllBookQuotes: function() {
+    return axios.get("/api/projects/home");
+  },
 //create new book quote and save to db--not sure how this should be set up 
   createbQuote: function(newbookquote) {
     console.log("reaching createbQuote front end")
