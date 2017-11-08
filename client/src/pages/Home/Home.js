@@ -23,6 +23,7 @@ class Home extends Component {
         pageNum: "",
         quote: "",
         projectId: "",
+        outline: ""
         // bquoteResult: ""
     }
 
@@ -71,6 +72,18 @@ class Home extends Component {
             .catch(err => console.log(err));
         }
       };
+          // Then reload books from the database
+    handleFormSubmitOutline = event => {
+        event.preventDefault();
+            if (this.state.outline) {
+                API.createOutline({
+               outline: this.state.outline,
+               projectId: this.state.projectId
+              })
+        //         .then(res => this.loadBooks())
+                .catch(err => console.log(err));
+            }
+          };
     // C.M. - should return the Books section on the left side of the screen and current project on the right side of the screen
     render() {
         return(
@@ -101,13 +114,13 @@ class Home extends Component {
                     placeholder="Publisher (required)"
                     />
                     <BookInput 
-                    value={this.state.pubdate}
+                    value={this.state.pubDate}
                     onChange={this.handleInputChange}
                     name="pubDate"
                     placeholder="Publication Date (required)"
                     />
                     <BookInput 
-                    value={this.state.pagenum}
+                    value={this.state.pageNum}
                     onChange={this.handleInputChange}
                     name="pageNum"
                     placeholder="Page Number (required)"
@@ -139,9 +152,18 @@ class Home extends Component {
                     <Section>
                         Essay Outline
                         <Article>
-                            <ProjectTextArea />
+                            <BookInput 
+                            value={this.state.projectId}
+                            onChange={this.handleInputChange}
+                            name="projectId"
+                            placeholder="Enter the project name here (required)"/>
+                            <ProjectTextArea 
+                            value={this.state.outline}
+                            onChange={this.handleInputChange}
+                            name="outline"/>
                             <br></br>
-                            <AddSectionBtn />
+                            <AddSectionBtn disabled= {!(this.state.outline)}
+                            onClick= {this.handleFormSubmitOutline}/>
                         </Article>
                     </Section>
                 </Col>
