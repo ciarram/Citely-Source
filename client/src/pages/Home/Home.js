@@ -19,9 +19,11 @@ class Home extends Component {
         title: "",
         author: "",
         publisher: "",
-        pubdate: "",
-        pagenum: "",
-        quote: ""
+        pubDate: "",
+        pageNum: "",
+        quote: "",
+        projectId: "",
+        // bquoteResult: ""
     }
 
     // componentDidMount() {
@@ -55,16 +57,17 @@ class Home extends Component {
       // Then reload books from the database
       handleFormSubmit = event => {
         event.preventDefault();
-        if (this.state.title && this.state.author && this.state.publisher && this.state.pubdate && this.state.pagenum && this.state.quote) {
+        if (this.state.title) {
           API.createbQuote({
             title: this.state.title,
             author: this.state.author,
             publisher: this.state.publisher,
-            pubdate: this.state.pubdate,
-            pagenum: this.state.pagenum,
-            quote: this.state.quote
+            pubDate: this.state.pubDate,
+            pageNum: this.state.pageNum,
+            quote: this.state.quote,
+            projectId: this.state.projectId
           })
-            // .then(res => this.loadBooks())
+    //         .then(res => this.loadBooks())
             .catch(err => console.log(err));
         }
       };
@@ -100,13 +103,13 @@ class Home extends Component {
                     <BookInput 
                     value={this.state.pubdate}
                     onChange={this.handleInputChange}
-                    name="pubdate"
+                    name="pubDate"
                     placeholder="Publication Date (required)"
                     />
                     <BookInput 
                     value={this.state.pagenum}
                     onChange={this.handleInputChange}
-                    name="pagenum"
+                    name="pageNum"
                     placeholder="Page Number (required)"
                     />
                     <BookTextArea 
@@ -114,6 +117,12 @@ class Home extends Component {
                     onChange={this.handleInputChange}
                     name="quote"
                     placeholder="Enter the quote here (required)"
+                    />
+                    <BookInput 
+                    value={this.state.projectId}
+                    onChange={this.handleInputChange}
+                    name="projectId"
+                    placeholder="Enter the project name here (required)"
                     />
                     <BookBtn disabled= {!(this.state.title)}
                      onClick= {this.handleFormSubmit}/>
