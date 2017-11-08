@@ -7,7 +7,7 @@ const outlineSchema = new Schema({
 //             ref: "Project" 
 //     },
         outline: {type: String, required: false},
-        projectId:{type: String, required: true}
+        projectIdOutline:{type: String, required: true}
 });
  
 const Outline = mongoose.model("Outline", outlineSchema);
