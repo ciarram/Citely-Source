@@ -15,6 +15,7 @@ class ProjectFolder extends Component {
   };
 
       componentDidMount() {
+        console.log("project page");
         this.loadProjects();
       }
     
@@ -102,12 +103,11 @@ class ProjectFolder extends Component {
               <Section>
                 {this.state.projectResult.map(project => (
                   <ListItem key={project._id}>
-                    <Link to={"api/projects/home/" + project._id}>
+                    <Link to={"/home/" + project._id}>
                       <strong>
                         {project.projectName}
                       </strong>
                     </Link>
-                    {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
                   </ListItem>
                 ))}
               </Section>

@@ -30,6 +30,7 @@ class Home extends Component {
     }
 
     componentDidMount(id) {
+        console.log("I'm on the home page!");
         this.loadBooks(id);
       }
     
