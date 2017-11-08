@@ -24,8 +24,8 @@ class Home extends Component {
         quote: "",
         projectId: "",
         outline: "",
-        projectIdOutline: ""
-        // bquoteResult: ""
+        projectIdOutline: "",
+        bquoteResult: []
     }
 
     // componentDidMount() {
@@ -40,6 +40,21 @@ class Home extends Component {
     //       )
     //       .catch(err => console.log(err));
     //   };
+
+    loadBooks = (id) => {
+        console.log("Inside loadBooks", id);
+        API.getAllBookQuotes(id)
+         .then(res =>{
+           if(res.data.statusCode === 401){
+                console.log("There's an error!", res.data);
+                 this.props.history.push("/login");
+            } else {
+                console.log("user:", res);
+                this.setState({currentUser: res.data.sess.passport.user, bquoteResult: res.data, title: "", author: "", publisher: "", pubDate: "", pageNum: "", quote: "", projectId: ""})
+            }
+         })    
+        .catch(err => console.log(err));
+    };
     
     //   // Deletes a book from the database with a given id, then reloads books from the db
     //   deleteBook = id => {
@@ -57,8 +72,9 @@ class Home extends Component {
     
       // When the form is submitted, use the API.saveBook method to save the book data
       // Then reload books from the database
-      handleFormSubmit = event => {
-        event.preventDefault();
+      handleFormSubmit = (id) => {
+        // event.preventDefault();
+        console.log(id);
         if (this.state.title) {
           API.createbQuote({
             title: this.state.title,
@@ -69,7 +85,7 @@ class Home extends Component {
             quote: this.state.quote,
             projectId: this.state.projectId
           })
-    //         .then(res => this.loadBooks())
+            .then(res => this.loadBooks(id))
             .catch(err => console.log(err));
         }
       };
@@ -139,7 +155,7 @@ class Home extends Component {
                     placeholder="Enter the project name here (required)"
                     />
                     <BookBtn disabled= {!(this.state.title)}
-                     onClick= {this.handleFormSubmit}/>
+                     onClick= {() => this.handleFormSubmit(this.state.projectId)}/>
 
                   
                         <Article>

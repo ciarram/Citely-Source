@@ -21,8 +21,10 @@ export default {
     return axios.get("/api/projects/home" + id);
     },
 //get all book quotes associated with project
-  getAllBookQuotes: function() {
-    return axios.get("/api/projects/home");
+  getAllBookQuotes: function(id) {
+    console.log("reaching get all books on front-end");
+    console.log("API", id);
+    return axios.get("/api/projects/home/" + id);
   },
 //create new book quote and save to db--not sure how this should be set up 
   createbQuote: function(newbookquote) {

@@ -14,12 +14,14 @@ router.route("/projects")
 //**ROUTE THAT BRINGS US TO HOME PAGE**
 //use this to reach just one project - this should route us to our homepage. Once again , unsure of how ":id" translates to the front end so we will test it. We can always hardcode here too. 
 router.route("/home")
-.get(projectController.findAllInProject)
-// .post(projectController.createbquote)
+.post(projectController.createbquote)
 // .post(projectController.createoutline)
 .put(projectController.updatebookq)
 .delete(projectController.deletebookq);
 
+
+router.route("/home/:id")
+.get(projectController.findAllInProject)
 //---------------------------------------
 //hoping all we need is above code, but keeping code below in case we need to separate any routes. 
 //---------------------------------------
