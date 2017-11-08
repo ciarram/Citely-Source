@@ -25,6 +25,17 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  findOutlineInProject: function (req, res) {
+    if (req.user) {
+      console.log(req.params.id);
+      db.Outline 
+        .find({projectIdOutline : req.params.id})
+        // .sort({ date: -1 })
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err, console.log(err)));
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
   findById: function (req, res) {
     if (req.user) {
       db.Project

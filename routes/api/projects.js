@@ -15,10 +15,14 @@ router.route("/projects")
 //use this to reach just one project - this should route us to our homepage. Once again , unsure of how ":id" translates to the front end so we will test it. We can always hardcode here too. 
 router.route("/home")
 .post(projectController.createbquote)
-// .post(projectController.createoutline)
 .put(projectController.updatebookq)
 .delete(projectController.deletebookq);
 
+router.route("/outline")
+.post(projectController.createoutline)
+
+router.route("/outline/:id")
+.get(projectController.findOutlineInProject)
 
 router.route("/home/:id")
 .get(projectController.findAllInProject)
