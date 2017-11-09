@@ -1,26 +1,20 @@
 import React from "react";
+import Dropdown from 'muicss/lib/react/dropdown';
+import DropdownItem from 'muicss/lib/react/dropdown-item';
 import Appbar from 'muicss/lib/react/appbar';
-
+// import Tabs from 'muicss/lib/react/tabs';
+// import Tab from 'muicss/lib/react/tab';
+import "./Nav.css";
 
 export const NavBar = (props) => (
-    <Appbar>
-      <table width="100%">
-         <tbody>
-             <td className="mui--appbar-height" >
-               <a href="/home">Home</a>
-             </td>
-             <td className="mui--appbar-height">
-               <a href="/projects">Projects</a>
-             </td>
-             <td className="mui--appbar-height">
-               <a href="/register">Register</a>
-             </td>
-             <td className="mui--appbar-height">
-               <a href="/logout">Logout</a>
-             </td>
-         </tbody>
-       </table>
-    </Appbar>
+  <Appbar>
+    <Dropdown color="primary" label="Dropdown">
+      <DropdownItem link="/home">Home</DropdownItem>
+      <DropdownItem link="/projects">Projects</DropdownItem>
+      <DropdownItem link="/register">Register</DropdownItem>
+      <DropdownItem link="/logout">Logout</DropdownItem>
+    </Dropdown>
+  </Appbar>
 
 /* <nav className="navbar navbar-expand-lg navbar-light bg-light"> */
 /* <a className="navbar-brand" href="/home">Project Name</a> */
