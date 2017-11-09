@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Col, Row, Container, Section } from "../../components/Grid";
+import { Column, Col2, Row1, Container1, Section } from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
 import {List, ListItem} from "../../components/List"
@@ -80,9 +80,10 @@ class ProjectFolder extends Component {
         return(
             <div>
             <NavBar/>
-            <Container fluid>
-                <Row>
-                <Col size="md-12">
+            <Container1 fluid>
+              <Row1>
+                <Column></Column>
+                <Column>
                   <h2>New Project</h2>
                   <ProjectInput 
                     value={this.state.projectName}
@@ -94,29 +95,36 @@ class ProjectFolder extends Component {
                     disabled= {!(this.state.projectName)}
                     onClick= {this.handleFormSubmit}
                   />
-            </Col>
-          </Row>
-          <Row>
-            <Col size="md-12">
+            </Column>
+            <Column></Column>
+            </Row1>
+            <Row1>
+            <Column></Column>
+            <Col2> 
               <h2>All Projects</h2>
               {this.state.projectResult ? (
               <Section>
+                <Column>
                 {this.state.projectResult.map(project => (
+                  <Col2>
                   <ListItem key={project._id}>
                     <Link to={"/home/" + project._id}>
                       <strong>
                         {project.projectName}
                       </strong>
                     </Link>
-                  </ListItem>
+                  </ListItem> 
+                  </Col2>
                 ))}
+                </Column>
               </Section>
             ) : (
               <h3>No Results to Display</h3>
-            )}
-            </Col>
-          </Row>
-        </Container>
+            )} 
+            </Col2>
+          <Column></Column>
+          </Row1>
+        </Container1>
             </div>
         );
     };

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Row, Container } from "../../components/Grid";
+import { Row1, Container1 } from "../../components/Grid";
 import {Input, SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
 
@@ -42,8 +42,8 @@ class Register extends Component {
     return (
       <div>
         {/* <Nav userInfo={this.state.currentUser} /> */}
-        <Container fluid>
-          <Row>
+        <Container1 fluid>
+          <Row1>
             {/* <Col size="md-12"> */}
               {/* <Jumbotron> */}
                 {/* <h1>
@@ -51,8 +51,8 @@ class Register extends Component {
                 </h1>
               </Jumbotron> */}
             {/* </Col> */}
-          </Row>
-          <Row>
+          </Row1>
+          <Row1>
             <form>
               <Input
                 onChange={this.handleInputChange}
@@ -72,8 +72,8 @@ class Register extends Component {
                 Login
               </SignupBtn>
             </form>
-          </Row>
-        </Container>
+          </Row1>
+        </Container1>
       </div>
     );
   }

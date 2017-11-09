@@ -3,3 +3,4 @@ export * from "./Container";
 export * from "./Row";
 export * from "./Article";
 export * from "./Section";
+export * from "./Col2";
