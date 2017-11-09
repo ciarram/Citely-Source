@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Row, Container } from "../../components/Grid";
+import { Row, Container, Col } from "../../components/Grid";
 import {Input, LoginBtn} from "../../components/Login";
 import {SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
@@ -65,6 +65,13 @@ class LoginForm extends Component {
     render(){
         return(
             <div>
+              <Col size="4"></Col>
+              {/* <Col size="6"> */}
+                <Container>
+                  <h1>Paper Helper</h1>
+                </Container>
+                {/* </Col> */}
+                <Col size="4"></Col>
                 <Container>
                 <form>
                     <Row>
