@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Row1, Container1, Column } from "../../components/Grid";
-import {Input, LoginBtn} from "../../components/Login";
+import { Row1, Container1, Column, Col3 } from "../../components/Grid";
+import {InputLogin, LoginBtn} from "../../components/Login";
 import {SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
 
@@ -65,24 +65,27 @@ class LoginForm extends Component {
     render(){
         return(
             <div>
-              <Column size="4"></Column>
+              {/* <Column size="4"></Column> */}
               {/* <Col size="6"> */}
                 <Container1>
-                  <h1>Paper Helper</h1>
+                  <h1 className = "mui--text-center mui--text-display3">Citely Source</h1>
                 </Container1>
                 {/* </Col> */}
-                <Column size="4"></Column>
+                <br></br><br></br>
+                <br></br><br></br>
+                <Column></Column>
+                <Column>
                 <Container1>
                 <form>
                     <Row1>
-                        <Input
+                        <InputLogin
                         onChange={this.handleInputChange}
                         name="username"
                         placeholder="username (required)"
                         />
                     </Row1>
                     <Row1>
-                        <Input
+                        <InputLogin
                         onChange={this.handleInputChange}
                         name="password"
                         type="password"
@@ -90,15 +93,20 @@ class LoginForm extends Component {
                         />
                     </Row1>
                     <Row1>
+                      <Col3></Col3>
                      <LoginBtn disabled={!(this.state.username && this.state.password)}
                 onClick={this.handleFormSubmit}> Login </LoginBtn>
+                      <Col3> </Col3>
                       <br></br><br></br>
+                      <Col3></Col3>
                       <SignupBtn onClick={this.handleFormRegister}>
                         Sign Up
                       </SignupBtn>
+                      <Col3></Col3>
                     </Row1>
                     </form>
                 </Container1>
+                </Column>
             </div>
         );
     };
