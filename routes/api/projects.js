@@ -18,6 +18,11 @@ router.route("/home")
 // .post(projectController.createoutline)
 .put(projectController.updatebookq)
 
+router.route("/outline")
+.post(projectController.createoutline)
+
+router.route("/outline/:id")
+.get(projectController.findOutlineInProject)
 
 router.route("/home/:id")
 .get(projectController.findAllInProject)

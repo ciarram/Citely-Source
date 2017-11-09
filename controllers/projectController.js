@@ -13,6 +13,17 @@ module.exports = {
     }
     else { res.json({ error: "Please login", statusCode: 401 }) }
   },
+  findOutlineInProject: function (req, res) {
+    if (req.user) {
+      console.log(req.params.id);
+      db.Outline 
+        .find({projectIdOutline : req.params.id})
+        // .sort({ date: -1 })
+        .then(dbModel => res.json({results: dbModel, sess: req.session}))
+        .catch(err => res.status(422).json(err, console.log(err)));
+    }
+    else { res.json({ error: "Please login", statusCode: 401 }) }
+  },
   //find all quotes associated with a particular project.(Same route can be recreated for outline and article quote schemas. The only difference is we would use db.Bookquote and db.Outline. Can add later and attach to buttons on the front end to display all data associated with one project. jm)
   findAllInProject: function (req, res) {
     console.log("We're in find all projects controller");

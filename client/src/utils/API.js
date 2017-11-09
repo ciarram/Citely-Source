@@ -12,6 +12,12 @@ export default {
     return axios.get("/api/projects/projects");
     },
 
+  getOutline: function(id) {
+    console.log("reaching get outline on front-end");
+    console.log("API", id);
+    return axios.get("/api/projects/outline/" + id);
+    },
+
   // Deletes the project according to its id
   deleteProject: function(id) {
     return axios.delete("/api/projects/projects" + id);
@@ -34,7 +40,7 @@ export default {
   //create new outline - not sure about this route but I think we need it to save info to db.
   createOutline: function(newoutline) {
     console.log("reaching createOutline front end")
-    return axios.post("/api/projects/home", newoutline);
+    return axios.post("/api/projects/outline", newoutline);
   },
   //delete book quote
   deleteBQuote: function(id) {
