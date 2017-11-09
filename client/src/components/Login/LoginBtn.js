@@ -1,6 +1,7 @@
 import React from "react";
+import Button from 'muicss/lib/react/button';
 
 export const LoginBtn = props =>
-  <button {...props} className="btn btn-success">
+  <Button {...props} color="accent">
     {props.children}
-  </button>;
+  </Button>;
