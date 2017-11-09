@@ -143,43 +143,43 @@ class Home extends Component {
                     value={this.state.title}
                     onChange={this.handleInputChange}
                     name="title"
-                    placeholder="Book Title (required)"
+                    label="Book Title (required)"
                     />
                     <BookInput 
                     value={this.state.author}
                     onChange={this.handleInputChange}
                     name="author"
-                    placeholder="Author Name (required)"
+                    label="Author Name (required)"
                     />
                     <BookInput 
                     value={this.state.publisher}
                     onChange={this.handleInputChange}
                     name="publisher"
-                    placeholder="Publisher (required)"
+                    label="Publisher (required)"
                     />
                     <BookInput 
                     value={this.state.pubDate}
                     onChange={this.handleInputChange}
                     name="pubDate"
-                    placeholder="Publication Date (required)"
+                    label="Publication Date (required)"
                     />
                     <BookInput 
                     value={this.state.pageNum}
                     onChange={this.handleInputChange}
                     name="pageNum"
-                    placeholder="Page Number (required)"
+                    label="Page Number (required)"
                     />
                     <BookTextArea 
                     value={this.state.quote}
                     onChange={this.handleInputChange}
                     name="quote"
-                    placeholder="Enter the quote here (required)"
+                    label="Enter the quote here (required)"
                     />
                     <BookInput 
                     value={this.state.projectId}
                     onChange={this.handleInputChange}
                     name="projectId"
-                    placeholder="Enter the project name here (required)"
+                    label="Enter the project name here (required)"
                     />
                     <BookBtn disabled= {!(this.state.title)}
                      onClick= {() => this.handleFormSubmit(this.state.projectId)}/>
@@ -210,11 +210,13 @@ class Home extends Component {
                             value={this.state.projectIdOutline}
                             onChange={this.handleInputChange}
                             name="projectIdOutline"
-                            placeholder="Enter the project name here (required)"/>
+                            label="Enter the project name here (required)"/>
                             <ProjectTextArea 
                             value={this.state.outline}
                             onChange={this.handleInputChange}
-                            name="outline"/>
+                            name="outline"
+                            label="Enter your thesis, sentences or quote"
+                            />
                             <br></br>
                             <AddSectionBtn disabled= {!(this.state.outline)}
                             onClick= {() => this.handleFormSubmitOutline(this.state.projectIdOutline)}/>
