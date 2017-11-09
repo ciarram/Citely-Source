@@ -2,9 +2,9 @@ import React from "react";
 import Row from 'muicss/lib/react/row';
 
 export const Row1 = ({ fluid, children }) =>
-<div className="mui-row">
+<Row className="mui-row">
   {children}
-</div>;
+</Row>;
 
 
 // export const Row = ({ fluid, children }) =>

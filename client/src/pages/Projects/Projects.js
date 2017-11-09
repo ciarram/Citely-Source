@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Column, Col2, Row1, Container1, Section } from "../../components/Grid";
+import { Column, Col2, Col3, Col4, Row1, Container1, Section } from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
 import {List, ListItem} from "../../components/List"
@@ -84,29 +84,32 @@ class ProjectFolder extends Component {
               <Row1>
                 <Column></Column>
                 <Column>
-                  <h2>New Project</h2>
+                  <h2 className = "mui--text-center">New Project</h2>
                   <ProjectInput 
                     value={this.state.projectName}
                     onChange={this.handleInputChange}
                     name="projectName"
                     placeholder="Enter the name of your project here (required)"
                   />
-                  <SubmitBtn 
+                  <Col4></Col4>
+                  <Col4></Col4>
+                  <SubmitBtn
                     disabled= {!(this.state.projectName)}
                     onClick= {this.handleFormSubmit}
                   />
+                  <Col4></Col4>
+                  <Col4></Col4>
             </Column>
             <Column></Column>
             </Row1>
             <Row1>
-            <Column></Column>
+            <Col3></Col3>
             <Col2> 
-              <h2>All Projects</h2>
+              <h2 className = "mui--text-center">All Projects</h2>
               {this.state.projectResult ? (
               <Section>
-                <Column>
                 {this.state.projectResult.map(project => (
-                  <Col2>
+                 <Column>
                   <ListItem key={project._id}>
                     <Link to={"/home/" + project._id}>
                       <strong>
@@ -114,15 +117,14 @@ class ProjectFolder extends Component {
                       </strong>
                     </Link>
                   </ListItem> 
-                  </Col2>
+                  </Column>
                 ))}
-                </Column>
               </Section>
             ) : (
               <h3>No Results to Display</h3>
             )} 
             </Col2>
-          <Column></Column>
+          <Col3></Col3>
           </Row1>
         </Container1>
             </div>
