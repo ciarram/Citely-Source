@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Row1, Container1, Column, Col3 } from "../../components/Grid";
+import { Row1, MainContainer, Container1, Column, Col3 } from "../../components/Grid";
 import {InputLogin, LoginBtn} from "../../components/Login";
 import {SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
@@ -67,8 +67,9 @@ class LoginForm extends Component {
             <div>
               {/* <Column size="4"></Column> */}
               {/* <Col size="6"> */}
+              <MainContainer>
                 <Container1>
-                  <h1 className = "mui--text-center mui--text-display3">Citely Source</h1>
+                  <h1 className = "mui--text-center mui--text-display3 titlelog">Citely Source</h1>
                 </Container1>
                 {/* </Col> */}
                 <br></br><br></br>
@@ -107,6 +108,7 @@ class LoginForm extends Component {
                     </form>
                 </Container1>
                 </Column>
+                </MainContainer>
             </div>
         );
     };

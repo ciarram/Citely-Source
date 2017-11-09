@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Column, Col2, Col3, Col4, Row1, Container1, Section } from "../../components/Grid";
+import { Column, Col2, Col3, Col4, MainContainer, Row1, Container1, Section } from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {ProjectInput, SubmitBtn} from "../../components/ProjectForm";
 import {List, ListItem} from "../../components/List"
@@ -80,6 +80,7 @@ class ProjectFolder extends Component {
         return(
             <div>
             <NavBar/>
+            <MainContainer>
             <Container1 fluid>
               <Row1>
                 <Column></Column>
@@ -127,6 +128,7 @@ class ProjectFolder extends Component {
           <Col3></Col3>
           </Row1>
         </Container1>
+        </MainContainer>
             </div>
         );
     };

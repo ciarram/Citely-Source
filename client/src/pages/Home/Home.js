@@ -7,7 +7,7 @@ import {BookBtn} from "../../components/BookBtn";
 import {DeleteBtn} from "../../components/DeleteBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
-import { Column, Col3, Col4, Row1, Container1, Article, Section } from "../../components/Grid";
+import { Column, Col3, Col4, Row1, MainContainer, Container1, Article, Section } from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {List, ListItem} from "../../components/List"
 import API from "../../utils/API";
@@ -133,6 +133,7 @@ class Home extends Component {
         return(
         <div>
         <NavBar />
+        <MainContainer>
         <Container1>
         <Row1>
             <Col3></Col3>
@@ -239,6 +240,7 @@ class Home extends Component {
                     </Column>
             </Row1>
         </Container1>
+        </MainContainer>
         </div>
         );
     };
