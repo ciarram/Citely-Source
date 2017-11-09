@@ -7,7 +7,7 @@ import {BookBtn} from "../../components/BookBtn";
 import {DeleteBtn} from "../../components/DeleteBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
-import { Col, Row, Container, Article, Section } from "../../components/Grid";
+import { Column, Row1, Container1, Article, Section } from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {List, ListItem} from "../../components/List"
 import API from "../../utils/API";
@@ -133,9 +133,9 @@ class Home extends Component {
         return(
         <div>
         <NavBar />
-        <Container>
-            <Row>
-                <Col size="md-4" className="book-list">
+        <Container1>
+            <Row1>
+                <Column size="md-4" className="book-list">
                     <Section>
                     Books
                     <br></br>
@@ -201,8 +201,8 @@ class Home extends Component {
               <h3>No Results to Display</h3>
             )}
         </Section>
-                </Col>
-                <Col size="md-6" className="ouline-list">
+                </Column>
+                <Column size="md-6" className="ouline-list">
                     <Section>
                         Essay Outline
                         <Article>
@@ -235,9 +235,9 @@ class Home extends Component {
              )}
                         </Article>
                     </Section>
-                </Col>
-            </Row>
-        </Container>
+                </Column>
+            </Row1>
+        </Container1>
         </div>
         );
     };

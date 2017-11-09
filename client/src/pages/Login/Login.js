@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-import { Row, Container, Col } from "../../components/Grid";
+import { Row1, Container1, Column } from "../../components/Grid";
 import {Input, LoginBtn} from "../../components/Login";
 import {SignupBtn} from "../../components/Register";
 import API from "../../utils/API";
@@ -65,40 +65,40 @@ class LoginForm extends Component {
     render(){
         return(
             <div>
-              <Col size="4"></Col>
+              <Column size="4"></Column>
               {/* <Col size="6"> */}
-                <Container>
+                <Container1>
                   <h1>Paper Helper</h1>
-                </Container>
+                </Container1>
                 {/* </Col> */}
-                <Col size="4"></Col>
-                <Container>
+                <Column size="4"></Column>
+                <Container1>
                 <form>
-                    <Row>
+                    <Row1>
                         <Input
                         onChange={this.handleInputChange}
                         name="username"
                         placeholder="username (required)"
                         />
-                    </Row>
-                    <Row>
+                    </Row1>
+                    <Row1>
                         <Input
                         onChange={this.handleInputChange}
                         name="password"
                         type="password"
                         placeholder="password (required)"
                         />
-                    </Row>
-                    <Row>
+                    </Row1>
+                    <Row1>
                      <LoginBtn disabled={!(this.state.username && this.state.password)}
                 onClick={this.handleFormSubmit}> Login </LoginBtn>
                       <br></br><br></br>
                       <SignupBtn onClick={this.handleFormRegister}>
                         Sign Up
                       </SignupBtn>
-                    </Row>
+                    </Row1>
                     </form>
-                </Container>
+                </Container1>
             </div>
         );
     };

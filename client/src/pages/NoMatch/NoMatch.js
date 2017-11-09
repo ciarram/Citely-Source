@@ -1,18 +1,18 @@
 import React from "react";
-import { Col, Row, Container } from "../../components/Grid";
+import { Column, Row1, Container1 } from "../../components/Grid";
 
 const NoMatch = () =>
-  <Container fluid>
-    <Row>
-      <Col size="md-12">
+  <Container1 fluid>
+    <Row1>
+      <Column size="md-12">
           <h1>404 Page Not Found</h1>
           <h1>
             <span role="img" aria-label="Face With Rolling Eyes Emoji">
               🙄
             </span>
           </h1>
-      </Col>
-    </Row>
-  </Container>;
+      </Column>
+    </Row1>
+  </Container1>;
 
 export default NoMatch;
