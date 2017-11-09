@@ -1,6 +1,5 @@
 import React from "react"; 
 import Textarea from 'muicss/lib/react/textarea';
-
 export const ProjectTextArea = props => (
     <div>
         <Textarea className="form-control" {...props} floatingLabel={true} />

@@ -1,8 +1,12 @@
-
 import React from "react";
+import Button from 'muicss/lib/react/button';
 
 export const DeleteBtn = (props) => (
-    <button {...props} className="btn">
+    <Button {...props} variant="raised" color="danger">
     Delete
-    </button>
+    </Button>
+    
+    // <button {...props} className="btn">
+    // Delete
+    // </button>
 )
