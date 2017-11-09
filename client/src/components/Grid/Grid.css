@@ -1,8 +1,14 @@
 .background {
     background-image: url("typewriter.jpg");
+    overflow: hidden;
     height: 850px;
 }
 
 .titlelog {
     font-family: 'Patua One', cursive;
+}
+
+.backgroundcolor {
+    background-color: rgba(233, 224, 213, 0.938);
+    padding: 30px;
 }
