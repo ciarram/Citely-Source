@@ -8,7 +8,7 @@ import {DeleteBtn} from "../../components/DeleteBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
 import { Col, Row, Container, Article, Section } from "../../components/Grid";
-import {Nav} from "../../components/Nav";
+import {NavBar} from "../../components/Nav";
 import {List, ListItem} from "../../components/List"
 import API from "../../utils/API";
 
@@ -134,7 +134,7 @@ class Home extends Component {
     render() {
         return(
         <div>
-        <Nav />
+        <NavBar />
         <Container>
             <Row>
                 <Col size="md-4" className="book-list">

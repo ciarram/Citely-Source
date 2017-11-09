@@ -3,7 +3,7 @@
 import React from "react";
 
 export const BookBtn = (props) => (
-    <button {...props} className="btn">
+    <button {...props} className="btn waves-effect waves-light">
     Add Book
     </button>
 )
