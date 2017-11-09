@@ -7,7 +7,7 @@ import Appbar from 'muicss/lib/react/appbar';
 import "./Nav.css";
 
 export const NavBar = (props) => (
-  <Appbar>
+  <Appbar className = "nav">
     <Dropdown color="primary" label="Dropdown">
       <DropdownItem link="/home">Home</DropdownItem>
       <DropdownItem link="/projects">Projects</DropdownItem>

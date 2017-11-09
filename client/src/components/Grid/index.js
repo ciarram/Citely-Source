@@ -7,3 +7,4 @@ export * from "./Col2";
 export * from "./Col3";
 export * from "./Col4";
 export * from "./MainContainer";
+export * from "./FormContainer";
