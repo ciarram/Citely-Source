@@ -57,13 +57,13 @@ class Register extends Component {
               <Input
                 onChange={this.handleInputChange}
                 name="username"
-                placeholder="username (required)"
+                label="username (required)"
               />
               <Input
                 onChange={this.handleInputChange}
                 name="password"
                 type="password"
-                placeholder="password (required)"
+                label="password (required)"
               />
               <SignupBtn
                 disabled={!(this.state.username && this.state.password)}

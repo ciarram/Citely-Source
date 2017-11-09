@@ -81,7 +81,7 @@ class LoginForm extends Component {
                         <InputLogin
                         onChange={this.handleInputChange}
                         name="username"
-                        placeholder="username (required)"
+                        label="username (required)"
                         />
                     </Row1>
                     <Row1>
@@ -89,7 +89,7 @@ class LoginForm extends Component {
                         onChange={this.handleInputChange}
                         name="password"
                         type="password"
-                        placeholder="password (required)"
+                        label="password (required)"
                         />
                     </Row1>
                     <Row1>

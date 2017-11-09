@@ -89,7 +89,7 @@ class ProjectFolder extends Component {
                     value={this.state.projectName}
                     onChange={this.handleInputChange}
                     name="projectName"
-                    placeholder="Enter the name of your project here (required)"
+                    label="Enter the name of your project here (required)"
                   />
                   <Col4></Col4>
                   <Col4></Col4>
