@@ -1,14 +1,15 @@
 .background {
     background-image: url("typewriter.jpg");
     overflow: hidden;
-    height: 850px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .titlelog {
-    font-family: 'Patua One', cursive;
-    font-size: 65pt;
-    color: #F0F0F0;
-    background-color: black;
+    font-family:  'Special Elite', cursive;
+    font-size: 55pt;
+    color: #000000;
+    margin-top: 45px;
 }
 
 .backgroundcolor {

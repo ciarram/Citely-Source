@@ -1,8 +1,9 @@
 import React from "react";
 import Panel from 'muicss/lib/react/panel';
+import "./List.css";
 
 export const ListItem = props => (
-  <Panel>
+  <Panel className = "projectpanel">
   {props.children}
   </Panel>
   
