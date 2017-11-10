@@ -2,9 +2,10 @@
 
 import React from "react";
 import Button from 'muicss/lib/react/button';
+import "./BookBtn.css";
 
 export const BookBtn = (props) => (
-    <Button {...props} variant="raised" color="primary">
+    <Button {...props} variant="raised" className="bookbtn">
     Add Book
     </Button>
     
