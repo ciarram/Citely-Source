@@ -11,7 +11,18 @@
     color: #000000;
     margin-top: 45px;
 }
-
+.booktitle{
+    font-family:  'Special Elite', cursive;
+    font-size: 40pt;
+    color: #000000;
+    margin-top: 50px;
+}
+.projectformtitle{
+    font-family:  'Special Elite', cursive;
+    font-size: 40pt;
+    color: #000000;
+    margin-top: 50px;
+}
 .backgroundcolor {
     background-color: rgba(233, 224, 213, 0.938);
     padding: 30px;

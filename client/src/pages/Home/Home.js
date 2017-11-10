@@ -139,7 +139,7 @@ class Home extends Component {
             <Col3></Col3>
             <Column>
                     <Section>
-                    <h2 className = "mui--text-center allprojtitle">Book Citation</h2>
+                    <h2 className = "mui--text-center booktitle">Book Citation</h2>
                     <BookContainer>
                     <BookInput 
                     value={this.state.title}
@@ -207,7 +207,7 @@ class Home extends Component {
         </Column>
                     <Column>
                     <Section>
-                    <h2 className = "mui--text-center allprojtitle">Project Outline</h2>
+                    <h2 className = "mui--text-center projectformtitle">Project Outline</h2>
                         <Article>
                         <OutlineContainer>
                             <BookInput

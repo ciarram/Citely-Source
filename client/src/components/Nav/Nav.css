@@ -1,9 +1,16 @@
-/* Navbar.Appbar{
-   background-color: #80DEEA;
-} */
-
-.nav {
-    background-color: #880E4F;
+.navbar {
+    background-color: #921156;
     /* background-color: rgb(16, 134, 115); */
     border-bottom: black 2px solid;
+    padding: 20px;
+}
+.navbar-brand{
+    color: rgba(233, 224, 213, 0.938);
+    font-size: 18pt;
+}
+.nav-link{
+    color: rgba(233, 224, 213, 0.938);
+    padding: 5px;
+    font-size: 14pt;
+    margin-left: 150px;
 }
