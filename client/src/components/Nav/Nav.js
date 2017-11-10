@@ -9,7 +9,7 @@ import "./Nav.css";
 export const NavBar = (props) => (
   <Appbar className = "nav">
     <Dropdown color="primary" label="Dropdown">
-      <DropdownItem link="/home">Home</DropdownItem>
+      <DropdownItem link="/home">Outline</DropdownItem>
       <DropdownItem link="/projects">Projects</DropdownItem>
       <DropdownItem link="/register">Register</DropdownItem>
       <DropdownItem link="/logout">Logout</DropdownItem>

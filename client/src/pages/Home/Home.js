@@ -7,7 +7,7 @@ import {BookBtn} from "../../components/BookBtn";
 import {DeleteBtn} from "../../components/DeleteBtn";
 import {ProjectTextArea} from "../../components/ProjectOutline";
 import {AddSectionBtn} from "../../components/AddSectionBtn";
-import { Column, Col3, Col4, Row1, MainContainer, Container1, Article, Section } from "../../components/Grid";
+import { Column, Col3, Col4, Row1, MainContainer, Container1, Article, Section, BookContainer,OutlineContainer} from "../../components/Grid";
 import {NavBar} from "../../components/Nav";
 import {List, ListItem} from "../../components/List"
 import API from "../../utils/API";
@@ -139,8 +139,8 @@ class Home extends Component {
             <Col3></Col3>
             <Column>
                     <Section>
-                    Books
-                    <br></br>
+                    <h2 className = "mui--text-center allprojtitle">Book Citation</h2>
+                    <BookContainer>
                     <BookInput 
                     value={this.state.title}
                     onChange={this.handleInputChange}
@@ -185,6 +185,7 @@ class Home extends Component {
                     />
                     <BookBtn disabled= {!(this.state.title)}
                      onClick= {() => this.handleFormSubmit(this.state.projectId)}/>
+                     </BookContainer>
 
                      {this.state.bquoteResult ? (
                         <Article>
@@ -206,8 +207,9 @@ class Home extends Component {
         </Column>
                     <Column>
                     <Section>
-                        Essay Outline
+                    <h2 className = "mui--text-center allprojtitle">Project Outline</h2>
                         <Article>
+                        <OutlineContainer>
                             <BookInput
                             value={this.state.projectIdOutline}
                             onChange={this.handleInputChange}
@@ -222,6 +224,7 @@ class Home extends Component {
                             <br></br>
                             <AddSectionBtn disabled= {!(this.state.outline)}
                             onClick= {() => this.handleFormSubmitOutline(this.state.projectIdOutline)}/>
+                        </OutlineContainer>
                              {this.state.outlineResult ? (
                          <Article>
                  {this.state.outlineResult.map(outline => (
