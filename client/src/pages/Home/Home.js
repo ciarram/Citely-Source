@@ -186,24 +186,24 @@ class Home extends Component {
                     <BookBtn disabled= {!(this.state.title)}
                      onClick= {() => this.handleFormSubmit(this.state.projectId)}/>
                      </BookContainer>
-
+                </Section>
                      {this.state.bquoteResult ? (
                         <Article>
-                {this.state.bquoteResult.map(quote => (
-                  <ListItem key={quote._id}>
-                      <strong>
-                        {quote.quote}
-                      </strong>
-                      <DeleteBtn 
-                      onClick={() => this.deleteBookQuote(quote._id)}
-                      />
-                    </ListItem>
-                ))}
-              </Article>
+                        {this.state.bquoteResult.map(quote => (
+                            <ListItem key={quote._id}>
+                                <strong>
+                                {quote.quote}
+                                </strong>
+                                <br></br>
+                                <DeleteBtn 
+                                    onClick={() => this.deleteBookQuote(quote._id)}
+                                />
+                                </ListItem>
+                    ))}
+                        </Article>
             ) : (
               <h3>No Results to Display</h3>
             )}
-        </Section>
         </Column>
                     <Column>
                     <Section>
