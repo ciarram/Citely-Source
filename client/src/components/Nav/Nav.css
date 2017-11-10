@@ -3,6 +3,7 @@
 } */
 
 .nav {
-    background-color: rgb(16, 134, 115);
+    background-color: #880E4F;
+    /* background-color: rgb(16, 134, 115); */
     border-bottom: black 2px solid;
 }

@@ -72,8 +72,6 @@ class LoginForm extends Component {
                   <h1 className = "mui--text-center mui--text-display3 titlelog">Citely Source</h1>
                 </Container1>
                 {/* </Col> */}
-                <br></br><br></br>
-                <br></br><br></br>
                 <Column></Column>
                 <Column>
                 <Container1>
